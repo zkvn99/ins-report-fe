@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:health-asset:insurance-mapping-rules:1.0",
+  "type": "object",
+  "required": ["rule_version", "rules"],
+  "properties": {
+    "rule_version": { "type": "string" },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "enabled", "priority", "target_coverage_id", "aggregation_type"],
+        "properties": {
+          "id": { "type": "string" },
+          "enabled": { "type": "boolean" },
+          "priority": { "type": "integer" },
+          "provider_type": { "type": ["string", "null"] },
+          "company_pattern": { "type": ["string", "null"] },
+          "product_pattern": { "type": ["string", "null"] },
+          "source_group_pattern": { "type": ["string", "null"] },
+          "rider_pattern": { "type": ["string", "null"] },
+          "target_coverage_id": { "type": "string" },
+          "mapping_type": { "type": "string" },
+          "aggregation_type": {
+            "enum": ["SUM", "MAX", "UNIQUE_POOL", "PER_DAY", "PER_EVENT", "REIMBURSEMENT", "NON_COMPARABLE"]
+          },
+          "payment_type": { "type": ["string", "null"] },
+          "note": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

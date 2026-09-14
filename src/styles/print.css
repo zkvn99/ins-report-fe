@@ -1,0 +1,17 @@
+@page { size: A4; margin: 0; }
+
+@media print {
+  html, body, #app { background: #fff; margin: 0; padding: 0; }
+  .screen-only, .empty-state { display: none !important; }
+  .app-shell { padding: 0; }
+  .page-unit { width: 210mm; height: 297mm; margin: 0 !important; break-after: page; }
+  .page-unit:last-child { break-after: auto; }
+  .report-page { width: 210mm; height: 297mm; box-shadow: none; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+}
+
+@media screen and (max-width: 900px) {
+  .toolbar-row { align-items: flex-start; flex-direction: column; }
+  .toolbar-actions { justify-content: flex-start; }
+  .app-shell { overflow-x: auto; }
+}

@@ -1,0 +1,79 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #d6e0e3;
+  padding: 10px 22px;
+  box-shadow: 0 3px 12px rgba(23,54,65,.05);
+}
+.toolbar-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.toolbar-row > div:first-child { display: flex; flex-direction: column; gap: 2px; }
+.toolbar-row b { color: var(--navy); }
+.toolbar-row small { color: var(--muted); }
+.toolbar-actions { display: flex; gap: 7px; flex-wrap: wrap; justify-content: flex-end; }
+.toolbar button, .file-button {
+  border: 1px solid #ccdade;
+  background: #fff;
+  border-radius: 7px;
+  padding: 7px 12px;
+  color: var(--navy);
+  font-size: 12px;
+}
+.file-button input { display: none; }
+.input-panel { display: grid; grid-template-columns: 1fr auto; gap: 10px; margin-top: 10px; }
+.input-panel textarea {
+  min-height: 86px;
+  resize: vertical;
+  border: 1px solid #d0dcdf;
+  border-radius: 8px;
+  padding: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+}
+.input-panel-actions { display: flex; width: 150px; flex-direction: column; gap: 8px; color: var(--muted); font-size: 11px; }
+.message-panel { display: grid; gap: 5px; margin-top: 8px; }
+.message { display: flex; gap: 8px; padding: 6px 8px; border-radius: 6px; font-size: 11px; background: #f4f7f8; color: #5d737c; }
+.message.error { background: #fff0f1; color: #9b3841; }
+.message.warning { background: #fff8e9; color: #886124; }
+.message.info { background: #eef7f5; color: #386b66; }
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 1mm;
+  padding: .9mm 1.8mm;
+  border-radius: 99px;
+  font-size: 6.7pt;
+  font-weight: 900;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+.status-tag::before { content: ''; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: currentColor; }
+.status-tag.good { color: var(--teal-dark); background: #e4f3ed; }
+.status-tag.watch { color: #976420; background: #fff1d8; }
+.status-tag.action { color: var(--red-dark); background: #ffe1e3; }
+.status-tag.info, .status-tag.unknown { color: #73828d; background: #eef2f4; }
+
+.chart-wrap { position: relative; min-height: 34mm; }
+.bar-chart { width: 100%; height: 31mm; overflow: visible; }
+.bar-chart .axis { stroke: #dbe6e8; stroke-width: 1; }
+.bar-chart .bar { fill: var(--teal); }
+.bar-chart .value-text { fill: var(--navy); font-size: 10px; font-weight: 800; }
+.bar-chart .label-text { fill: #7d8f97; font-size: 9px; }
+.chart-unit { text-align: right; font-size: 6pt; color: var(--muted); margin-top: -1mm; }
+
+.coverage-progress { padding: 1.4mm 0; border-bottom: 1px solid #e6eeee; }
+.coverage-progress:last-child { border-bottom: 0; }
+.coverage-progress-head { display: flex; align-items: baseline; justify-content: space-between; gap: 2mm; }
+.coverage-progress-head b { font-size: 7.6pt; }
+.coverage-progress-head strong { font-size: 6.8pt; color: var(--red); white-space: nowrap; }
+.coverage-progress-head strong.enough { color: var(--teal); }
+.coverage-progress-head strong.absent { color: #9aa9af; }
+.coverage-progress-amounts { display: flex; justify-content: space-between; gap: 2mm; color: var(--muted); font-size: 6.3pt; margin-top: .7mm; }
+.progress-track { height: 1.1mm; border-radius: 10px; overflow: hidden; background: #e4ebee; margin-top: .8mm; }
+.progress-track i { display: block; height: 100%; border-radius: inherit; background: var(--red); }
+.coverage-progress:has(.enough) .progress-track i { background: var(--teal); }
+.coverage-progress small { font-size: 5.8pt; color: #8a9aa0; }
+
+.anatomy-figure { display: block; width: 100%; height: auto; }

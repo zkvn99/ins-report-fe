@@ -1,0 +1,5 @@
+첨부한 건강검진 PDF, 메리츠 보장분석 PDF, 권장금액 Excel, coverage-catalog.json, customer-input.schema.json을 전부 확인해줘.
+
+CUSTOMER_JSON_PROMPT.txt 규칙대로 customer_input_v2.json 하나만 만들어줘.
+중간 질문 없이 끝까지 진행하고, 추정하지 말고, 미매핑 담보는 coverage_id=null로 보존해줘.
+합계·부족금액·충족률·차트값은 계산하지 마.

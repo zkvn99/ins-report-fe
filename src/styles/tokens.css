@@ -1,0 +1,26 @@
+:root {
+  --ink: #1c3849;
+  --navy: #193d50;
+  --teal: #287d78;
+  --teal-dark: #23665f;
+  --teal-pale: #edf7f4;
+  --muted: #70818a;
+  --line: #dce7e9;
+  --pale: #f6f9fa;
+  --red: #bf414b;
+  --red-dark: #a8343d;
+  --red-pale: #fff1f1;
+  --amber: #ae7728;
+  --amber-pale: #fff7e9;
+  --blue: #4d6a84;
+  --unknown: #7a8993;
+  --medical: #b9ced3;
+  --covered: #287d78;
+  --uncovered: #b85a64;
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-pad-x: 15mm;
+  --page-pad-top: 13mm;
+  --page-pad-bottom: 15mm;
+  --font: 'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}

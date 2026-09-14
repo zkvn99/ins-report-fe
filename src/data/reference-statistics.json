@@ -1,0 +1,2859 @@
+{
+  "schema_version": "1.0",
+  "edition": "8.0",
+  "reviewed_at": "2026-09-11",
+  "currency": "KRW",
+  "sources": [
+    {
+      "id": "R1",
+      "short": "질병관리청 · 2023 심뇌혈관질환 발생통계",
+      "title": "질병관리청 · 2023 심뇌혈관질환 발생통계",
+      "organization": "질병관리청",
+      "url": "https://www.kdca.go.kr/bbs/kdca/42/304184/download.do",
+      "data_period": "2020–2023",
+      "publication_year": 2025,
+      "locator": "20쪽 심근경색증·40쪽 뇌졸중: 발생구분별 추이의 첫 발생 연령구간 표",
+      "limitation": "해당 연령 인구 10만 명당 첫 발생률. 과거 일정 기간의 이력과 사건 식별 기준에 따른 국가통계이며 개인 위험확률이 아님."
+    },
+    {
+      "id": "R2",
+      "short": "중앙암등록본부 · 2020 암등록통계",
+      "title": "중앙암등록본부 · 2020 암등록통계",
+      "organization": "중앙암등록본부",
+      "url": "https://www.cancer.go.kr/download.do?uuid=344e1967-a346-4ba3-8320-34ab14090190.pdf",
+      "data_period": "2020",
+      "publication_year": 2022,
+      "locator": "표 4. 주요 암종 성·연령별 발생률; PDF 94쪽",
+      "limitation": "전국 남녀 합계 연령군별 조발생률. 연도별 원보고서 값으로 후속 개정값과 차이가 날 수 있음."
+    },
+    {
+      "id": "R3",
+      "short": "중앙암등록본부 · 2021 암등록통계",
+      "title": "중앙암등록본부 · 2021 암등록통계",
+      "organization": "중앙암등록본부",
+      "url": "https://www.cancer.go.kr/download.do?uuid=2f85dee7-6b03-424c-a3da-3907987ca2e0.pdf",
+      "data_period": "2021",
+      "publication_year": 2023,
+      "locator": "표 4. 주요 암종 성·연령별 발생률; PDF 95쪽",
+      "limitation": "전국 남녀 합계 연령군별 조발생률. 연도별 원보고서 값이며 동일 개정판의 시계열은 아님."
+    },
+    {
+      "id": "R4",
+      "short": "중앙암등록본부 · 2023 암등록통계",
+      "title": "중앙암등록본부 · 2023 암등록통계",
+      "organization": "중앙암등록본부",
+      "url": "https://www.cancer.go.kr/download.do?uuid=0dc272d6-f4a4-4080-995b-eab75819e39a.pdf",
+      "data_period": "2023",
+      "publication_year": 2026,
+      "locator": "표 4. 주요 암종 성·연령별 발생률; PDF 100쪽 / 인쇄 86쪽",
+      "limitation": "2026년 5월 수정본. 2023년 실제 관찰값. 대형 PDF 표의 이미지 렌더링은 실패하여 명확한 행·열의 파싱 텍스트로 확인."
+    },
+    {
+      "id": "R5",
+      "short": "대한내분비학회 · 당뇨병 연령별 통계 부록",
+      "title": "대한내분비학회 · 당뇨병 연령별 통계 부록",
+      "organization": "대한내분비학회",
+      "url": "https://synapse.koreamed.org/upload/SynapseXML/2008enm/media/enm-2024-2073-Supplemental-Table-S1.pdf",
+      "data_period": "2020–2022",
+      "publication_year": 2024,
+      "locator": "Supplemental Table S1. Prevalence of diabetes mellitus",
+      "limitation": "국민건강영양조사 유병률이며 신규 발생률이 아님. 2022년 검사기관 변경으로 단순 증감 해석 주의."
+    },
+    {
+      "id": "R6",
+      "short": "국민건강보험공단·건강보험심사평가원 · 2023 건강보험통계연보 보도자료",
+      "title": "국민건강보험공단·건강보험심사평가원 · 2023 건강보험통계연보 보도자료",
+      "organization": "국민건강보험공단·건강보험심사평가원",
+      "url": "https://www.kiri.or.kr/PDF/weeklytrend/20241209/trend20241209_3.pdf",
+      "data_period": "2022–2023",
+      "publication_year": 2024,
+      "locator": "정부 보도자료 원문 재게시본 14쪽: 13개 만성질환 진료현황",
+      "limitation": "반올림된 진료인원(천 명)과 진료비(억 원)의 비율로 근사 연간 환자당 비용 계산. 전 연령·건강보험 진료비. 신규 발병 코호트, 본인부담금, 비급여 포함 총액 아님."
+    },
+    {
+      "id": "R7",
+      "short": "질병관리청 · 2023 당뇨병 유병 현황",
+      "title": "질병관리청 · 2023 당뇨병 유병 현황",
+      "organization": "질병관리청",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12479802/",
+      "data_period": "2023",
+      "publication_year": 2025,
+      "locator": "국민건강영양조사 당뇨병 유병률·검사 변경 설명",
+      "limitation": "유병률은 기존 환자를 포함. 2022년 검사기관 변경에 따른 비교 주의 안내 참고."
+    },
+    {
+      "id": "R8",
+      "short": "건강보험심사평가원 · 2022 치과 외래 진료현황",
+      "title": "건강보험심사평가원 · 2022 치과 외래 진료현황",
+      "organization": "건강보험심사평가원",
+      "url": "https://www.hira.or.kr/bbsDummy.do?brdBltNo=10925&brdScnBltNo=4&pageIndex=1&pageIndex2=1&pgmid=HIRAA020041000100",
+      "data_period": "2022",
+      "publication_year": 2023,
+      "locator": "치은염 및 치주질환 K05 진료인원 보도자료",
+      "limitation": "진료이용 통계이며 발생률 아님. 현재 연령대의 신규 발생률·발병 후 누적비용 대신 사용하지 않음."
+    },
+    {
+      "id": "R9",
+      "short": "건강보험심사평가원 · 뇌혈관질환 진료현황",
+      "url": "https://www.hira.or.kr/bbsDummy.do?brdBltNo=10980&brdScnBltNo=4&pageIndex=1&pgmid=HIRAA020041000100",
+      "data_period": "2022",
+      "publication_year": 2023,
+      "locator": "보도자료 2023.09.15 · 뇌졸중 진료현황 본문",
+      "limitation": "뇌졸중 I60–I64 주상병 진료환자. 전체·입원·외래는 각각 다른 진료환자군의 연간 1인당 평균으로 서로 더하지 않음. 첫 발병 환자 추적비용 또는 본인부담금이 아님. 위쪽 KDCA 첫 발생 정의와 질환 범위 차이를 유지함."
+    },
+    {
+      "id": "R10",
+      "short": "건강보험심사평가원 · 심장질환 진료현황",
+      "url": "https://www.hira.or.kr/bbsDummy.do?brdBltNo=11037&brdScnBltNo=4&pageIndex=1&pgmid=HIRAA020041000100",
+      "data_period": "2022",
+      "publication_year": 2023,
+      "locator": "보도자료 2023.11.07 · 협심증·심근경색 주요 수술 본문",
+      "limitation": "협심증 I20 및 심근경색 I21–I22 수술환자군. 경피적 관상동맥 중재술·관상동맥 우회술의 환자당 해당 수술 진료비이며 입원 전체비용이나 발병 후 연간 총비용이 아님. 심근경색 단독 비용으로 계산하지 않음."
+    },
+    {
+      "id": "R12",
+      "short": "국가데이터처 · 2024 생애단계별 행정통계",
+      "url": "https://mods.go.kr/boardDownload.es?bid=11895&list_no=442561&seq=3",
+      "data_period": "2024",
+      "publication_year": 2025,
+      "locator": "PDF 35쪽 / 인쇄 28쪽 · 65세 이상 질병소분류별 외래 진료현황",
+      "limitation": "공단·심평원 건강보험통계 인용. 치은염 및 치주질환 65세 이상 외래환자 1인당 연간 진료비: 남자 144천원, 여자 137천원. 전 연령 또는 현재 47세의 평균이 아님. 공단부담분 포함, 비급여·의료급여 미포함. 약국 포함·한의분류 제외."
+    },
+    {
+      "id": "R13",
+      "short": "중앙암등록본부 · 2023 암등록통계 참고자료",
+      "url": "https://www.cancer.go.kr/download.do?uuid=cfcd35c3-391f-4060-9688-641db3d86cbd.pdf",
+      "data_period": "2020–2023",
+      "publication_year": 2026,
+      "locator": "PDF 11쪽 / 인쇄 10쪽 · 암종별 발생자수 및 조발생률 연도표",
+      "limitation": "남녀 합계 전 연령 인구 10만 명당 신규 발생률. 연령표가 적용되지 않을 때 쓰는 전체 인구 대체 통계이며 개인 발병 예측이 아님. 대장은 C18–C20. 같은 표의 표준화율과 조발생률을 혼용하지 않음."
+    },
+    {
+      "id": "R14",
+      "short": "건강보험심사평가원 · 2025 암질환 상병별 현황",
+      "url": "https://opendata.hira.or.kr/op/opc/olapHthInsRvStatInfoTab15.do?docNo=03-022",
+      "data_period": "2025년 1~12월 건강보험 심사결정분",
+      "publication_year": null,
+      "locator": "암질환 상병별 현황 · 입원/외래 표의 C16·C22·C34·C18·C20 행",
+      "scope": "전 연령 · 건강보험 · 주상병 3단 상병 · 한방과 약국 제외. 인당 진료비 = 요양급여비용 / 진료인원.",
+      "limitation": "진료연도나 신규 발병 첫해 코호트가 아닌 심사결정연도 기준. 공단부담분을 포함한 급여 진료비이며 본인부담금·비급여 포함 총의료비·실제 보험금이 아님. 입원·외래 환자군은 별개로 합산 금지. C18/C20을 단순 평균해 전체 대장암으로 표시하지 않음.",
+      "retrieved_at": "2026-09-14",
+      "source_publication_year_status": "2025 심사년도 자료의 열람연도; 페이지 작성일과 구분",
+      "license": "공공누리 제1유형 · 출처표시"
+    }
+  ],
+  "incidence": {},
+  "historical_series": {
+    "stroke": {
+      "id": "stroke",
+      "disease_key": "stroke",
+      "label": "뇌졸중",
+      "icd": "I60,I61,I63,I64",
+      "metric": "incidence_events_per_100k",
+      "unit": "건/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령대별 첫 발생률. 개인의 미래 발병확률이나 재발률은 아닙니다.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 3.6,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 4.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 3.7,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 2.9,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 7,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 8.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 7.3,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 7.7,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 23.8,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 24.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 25.1,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 24.4,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 66.7,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 67.5,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 63.6,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 64.1,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 160,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 155.7,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 149.4,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 150.4,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 309.5,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 301.2,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 285.5,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 279,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 79,
+          "values": {
+            "2020": {
+              "value": 624.6,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 609.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 579,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 563.1,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 80,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 1262.2,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 1232.4,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 1223.4,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 1185.4,
+              "source_id": "R1"
+            }
+          }
+        }
+      ],
+      "event_definition": "first_observed_incident_event"
+    },
+    "mi": {
+      "id": "mi",
+      "disease_key": "mi",
+      "label": "심근경색증",
+      "icd": "I21-I23",
+      "metric": "incidence_events_per_100k",
+      "unit": "건/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령대별 첫 발생률. 개인의 미래 발병확률이나 재발률은 아닙니다.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 0.1,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 0.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 0,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 0.1,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 1.2,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 0.9,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 1.1,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 1.2,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 7.9,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 8.9,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 8.4,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 7.2,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 32.7,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 31.8,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 33.2,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 31,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 75.4,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 73.7,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 71.9,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 70.1,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 126.7,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 123.6,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 118.5,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 114.5,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 79,
+          "values": {
+            "2020": {
+              "value": 196.6,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 190.4,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 189.2,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 185.4,
+              "source_id": "R1"
+            }
+          }
+        },
+        {
+          "min_age": 80,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 318.4,
+              "source_id": "R1"
+            },
+            "2021": {
+              "value": 311.1,
+              "source_id": "R1"
+            },
+            "2022": {
+              "value": 301.2,
+              "source_id": "R1"
+            },
+            "2023": {
+              "value": 286.9,
+              "source_id": "R1"
+            }
+          }
+        }
+      ],
+      "event_definition": "first_observed_incident_event"
+    },
+    "gastric": {
+      "id": "gastric",
+      "disease_key": "gastric",
+      "label": "위암",
+      "icd": "C16",
+      "metric": "incidence_people_per_100k",
+      "unit": "명/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령별 신규 암 발생률. 2022년 표는 원문 접근 제한으로 미반영; 0이 아닙니다. 각 연도 원보고서 값으로 개정 차이 가능.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 9,
+          "values": {
+            "2020": {
+              "value": null,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": null,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": null,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 10,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 0,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.1,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 0.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.9,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 1,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 6.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 6.4,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 5.5,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 23.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 26.5,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 23.6,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 63,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 65.5,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 59.5,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 122.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 134.3,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 127.2,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 197.5,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 208.4,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 194.5,
+              "source_id": "R4"
+            }
+          }
+        }
+      ]
+    },
+    "colorectal": {
+      "id": "colorectal",
+      "disease_key": "colorectal",
+      "label": "대장암",
+      "icd": "C18-C20",
+      "metric": "incidence_people_per_100k",
+      "unit": "명/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령별 신규 암 발생률. 2022년 표는 원문 접근 제한으로 미반영; 0이 아닙니다. 각 연도 원보고서 값으로 개정 차이 가능.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 9,
+          "values": {
+            "2020": {
+              "value": null,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": null,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": null,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 10,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 0.3,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.3,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.3,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 2.4,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 4.4,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 5.3,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 12.2,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 20,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 24.6,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 27.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 39.6,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 40.8,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 66.2,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 75,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 74.8,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 113.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 125,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 116.1,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 210.4,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 225.6,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 199.1,
+              "source_id": "R4"
+            }
+          }
+        }
+      ]
+    },
+    "liver_cancer": {
+      "id": "liver_cancer",
+      "disease_key": "liver_cancer",
+      "label": "간암",
+      "icd": "C22",
+      "metric": "incidence_people_per_100k",
+      "unit": "명/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령별 신규 암 발생률. 2022년 표는 원문 접근 제한으로 미반영; 0이 아닙니다. 각 연도 원보고서 값으로 개정 차이 가능.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 9,
+          "values": {
+            "2020": {
+              "value": 0.3,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.5,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.6,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 10,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 0.1,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.1,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.2,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 0.2,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.3,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.3,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 2.8,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 3.1,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 2.2,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 12.5,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 12.2,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 10.3,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 40.3,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 35.6,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 31.7,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 66.9,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 65.7,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 60.3,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 111.6,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 110.9,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 104.5,
+              "source_id": "R4"
+            }
+          }
+        }
+      ]
+    },
+    "lung_cancer": {
+      "id": "lung_cancer",
+      "disease_key": "lung_cancer",
+      "label": "폐암",
+      "icd": "C33-C34",
+      "metric": "incidence_people_per_100k",
+      "unit": "명/10만 명",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "note": "연령별 신규 암 발생률. 2022년 표는 원문 접근 제한으로 미반영; 0이 아닙니다. 각 연도 원보고서 값으로 개정 차이 가능.",
+      "age_bands": [
+        {
+          "min_age": 0,
+          "max_age": 9,
+          "values": {
+            "2020": {
+              "value": 0,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": null,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.1,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 10,
+          "max_age": 19,
+          "values": {
+            "2020": {
+              "value": 0.1,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.1,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 20,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 0.5,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 0.7,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 0.5,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 3.1,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 3.3,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 3.6,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 11.6,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 12.2,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 12.4,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 42.1,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 45.6,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 41.7,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 131.2,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 137.2,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 134.8,
+              "source_id": "R4"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 285.3,
+              "source_id": "R2"
+            },
+            "2021": {
+              "value": 298.8,
+              "source_id": "R3"
+            },
+            "2022": {
+              "value": null,
+              "source_id": null
+            },
+            "2023": {
+              "value": 291.9,
+              "source_id": "R4"
+            }
+          }
+        }
+      ]
+    },
+    "diabetes_prevalence": {
+      "id": "diabetes_prevalence",
+      "disease_key": "diabetes",
+      "label": "당뇨병",
+      "icd": "survey_diabetes",
+      "metric": "prevalence_percent",
+      "unit": "%",
+      "sex": "all",
+      "years": [
+        2020,
+        2021,
+        2022
+      ],
+      "note": "유병률: 이미 당뇨병이 있는 사람의 비율. 신규 발생률 아님. 검사기관 변경으로 2022년 증감 단순 해석 주의.",
+      "age_bands": [
+        {
+          "min_age": 19,
+          "max_age": 29,
+          "values": {
+            "2020": {
+              "value": 0.7,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 0.5,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 1.6,
+              "source_id": "R5"
+            }
+          }
+        },
+        {
+          "min_age": 30,
+          "max_age": 39,
+          "values": {
+            "2020": {
+              "value": 4.4,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 3.6,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 3,
+              "source_id": "R5"
+            }
+          }
+        },
+        {
+          "min_age": 40,
+          "max_age": 49,
+          "values": {
+            "2020": {
+              "value": 9,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 10.6,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 6.2,
+              "source_id": "R5"
+            }
+          }
+        },
+        {
+          "min_age": 50,
+          "max_age": 59,
+          "values": {
+            "2020": {
+              "value": 19.1,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 15.9,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 17.6,
+              "source_id": "R5"
+            }
+          }
+        },
+        {
+          "min_age": 60,
+          "max_age": 69,
+          "values": {
+            "2020": {
+              "value": 25.1,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 24.8,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 20.6,
+              "source_id": "R5"
+            }
+          }
+        },
+        {
+          "min_age": 70,
+          "max_age": 120,
+          "values": {
+            "2020": {
+              "value": 31.5,
+              "source_id": "R5"
+            },
+            "2021": {
+              "value": 31.8,
+              "source_id": "R5"
+            },
+            "2022": {
+              "value": 29.4,
+              "source_id": "R5"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "cost_profiles": {},
+  "annual_references": {
+    "diabetes": {
+      "disease_key": "diabetes",
+      "label": "당뇨병",
+      "icd": "E10-E14",
+      "minimum_age": 0,
+      "maximum_age": 120,
+      "age_basis": "전 연령 참고",
+      "sex": "all",
+      "type": "annual_cross_section",
+      "source_id": "R6",
+      "basis": "건강보험 진료비; 공단부담분 포함·비급여 제외",
+      "values": [
+        {
+          "year": 2022,
+          "patients_rounded": 3698000,
+          "total_cost_rounded_won": 3423300000000,
+          "value_won": 925716.603569497
+        },
+        {
+          "year": 2023,
+          "patients_rounded": 3828000,
+          "total_cost_rounded_won": 3623400000000,
+          "value_won": 946551.724137931
+        }
+      ],
+      "note": "반올림 집계값으로 계산한 근사치. 연간 진료환자 평균이며 신규 발병 첫해·3년·5년 누적비용이 아닙니다."
+    },
+    "ckd": {
+      "disease_key": "ckd",
+      "label": "만성콩팥병",
+      "icd": "N18",
+      "minimum_age": 0,
+      "maximum_age": 120,
+      "age_basis": "전 연령 참고",
+      "sex": "all",
+      "type": "annual_cross_section",
+      "source_id": "R6",
+      "basis": "건강보험 진료비; 공단부담분 포함·비급여 제외",
+      "values": [
+        {
+          "year": 2022,
+          "patients_rounded": 302000,
+          "total_cost_rounded_won": 2517900000000,
+          "value_won": 8337417.218543046
+        },
+        {
+          "year": 2023,
+          "patients_rounded": 326000,
+          "total_cost_rounded_won": 2667100000000,
+          "value_won": 8181288.343558283
+        }
+      ],
+      "note": "반올림 집계값으로 계산한 근사치. 연간 진료환자 평균이며 신규 발병 첫해·3년·5년 누적비용이 아닙니다."
+    }
+  },
+  "modules": [
+    {
+      "id": "brain",
+      "title": "뇌·뇌혈관",
+      "position": "brain",
+      "health_area_ids": [
+        "brain",
+        "pressure",
+        "lipid"
+      ],
+      "core_coverage_ids": [
+        "C038",
+        "C037",
+        "C036"
+      ],
+      "coverage_ids": [
+        "C036",
+        "C037",
+        "C038",
+        "C039",
+        "C040",
+        "C041",
+        "C042",
+        "C043",
+        "C044",
+        "C045",
+        "C046",
+        "C047",
+        "C048",
+        "C049"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C037",
+      "benefit_label": "뇌졸중 진단비 1회",
+      "health_hint": "뇌 직접 평가와 혈압·지질 같은 관련 지표를 구분해 살펴보세요.",
+      "insurance_note": "뇌혈관 진단비와 뇌졸중 진단비는 서로 다른 범위의 담보입니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "stroke",
+      "disease_label": "뇌졸중",
+      "disease_icd": "I60,I61,I63,I64",
+      "history_id": "stroke",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "stroke_annual",
+      "context_id": "stroke_treated"
+    },
+    {
+      "id": "heart",
+      "title": "심장·혈압·지질",
+      "position": "heart",
+      "health_area_ids": [
+        "pressure",
+        "lipid"
+      ],
+      "core_coverage_ids": [
+        "C051",
+        "C050",
+        "C053"
+      ],
+      "coverage_ids": [
+        "C050",
+        "C051",
+        "C052",
+        "C053",
+        "C054",
+        "C055",
+        "C056",
+        "C057",
+        "C058",
+        "C059",
+        "C060",
+        "C061",
+        "C062",
+        "C063"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C050",
+      "benefit_label": "급성심근경색 진단비 1회",
+      "health_hint": "혈압·지질의 관리 필요성과 심장질환 진단은 구분합니다.",
+      "insurance_note": "진단비와 수술비는 지급 사유가 다릅니다. 오른쪽은 관련 수술환자군의 수술행위 비용입니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "mi",
+      "disease_label": "심근경색증",
+      "disease_icd": "I21-I23",
+      "history_id": "mi",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "mi_procedures",
+      "context_id": "mi_related_treated"
+    },
+    {
+      "id": "metabolic",
+      "title": "혈당·대사·체중",
+      "position": "metabolic",
+      "health_area_ids": [
+        "glucose",
+        "weight"
+      ],
+      "core_coverage_ids": [
+        "C075",
+        "C086",
+        "C104"
+      ],
+      "coverage_ids": [
+        "C075",
+        "C086",
+        "C103",
+        "C104"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": null,
+      "benefit_label": "수술·입원·실손 각각 확인",
+      "health_hint": "혈당과 체중의 추적 관리를 위한 영역이며 당뇨병 진단을 뜻하지 않습니다.",
+      "insurance_note": "진단·수술·입원은 지급 사유가 다릅니다. 실손 한도 자체를 보험금으로 더하지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "diabetes",
+      "disease_label": "당뇨병",
+      "disease_icd": "E10-E14",
+      "history_id": null,
+      "annual_id": "diabetes",
+      "alternative_history_id": "diabetes_prevalence",
+      "benchmark_id": "diabetes_annual",
+      "context_id": "diabetes_treated"
+    },
+    {
+      "id": "digestive",
+      "title": "위·소화기",
+      "position": "stomach",
+      "health_area_ids": [
+        "stomach"
+      ],
+      "core_coverage_ids": [
+        "C010",
+        "C019",
+        "C018"
+      ],
+      "coverage_ids": [
+        "C010",
+        "C018",
+        "C019",
+        "C075",
+        "C076",
+        "C077",
+        "C078",
+        "C079",
+        "C080",
+        "C086",
+        "C087",
+        "C088",
+        "C089",
+        "C103",
+        "C104"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C010",
+      "benefit_label": "일반암 진단비 1회",
+      "health_hint": "현재 위·소화기 검진 소견과 별도로, 대표 통계는 위암입니다. 일반 위장질환에 암 진단비가 지급되는 뜻은 아닙니다.",
+      "insurance_note": "같은 일반암 진단비를 여러 암 사례에 나누어 표시합니다. 각 페이지 금액을 더하지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "gastric",
+      "disease_label": "위암",
+      "disease_icd": "C16",
+      "history_id": "gastric",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "gastric_patient_mean",
+      "context_id": "gastric_all"
+    },
+    {
+      "id": "cancer",
+      "title": "암·중증치료",
+      "position": "abdomen",
+      "health_area_ids": [],
+      "core_coverage_ids": [
+        "C010",
+        "C019",
+        "C018"
+      ],
+      "coverage_ids": [
+        "C010",
+        "C011",
+        "C012",
+        "C013",
+        "C014",
+        "C015",
+        "C016",
+        "C017",
+        "C018",
+        "C019",
+        "C020",
+        "C021",
+        "C022",
+        "C023",
+        "C024",
+        "C025",
+        "C026",
+        "C027",
+        "C028",
+        "C029",
+        "C030",
+        "C031",
+        "C032",
+        "C033",
+        "C034",
+        "C035"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C010",
+      "benefit_label": "일반암 진단비 1회",
+      "health_hint": "암 진단을 가정한 별도 보장 예시입니다. 현재 검진에서 암이 의심된다는 뜻이 아닙니다.",
+      "insurance_note": "같은 일반암 진단비를 여러 암 사례에 나누어 표시합니다. 각 페이지 금액을 더하지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "colorectal",
+      "disease_label": "대장암",
+      "disease_icd": "C18-C20",
+      "history_id": "colorectal",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "colorectal_patient_mean",
+      "context_id": "colorectal_all"
+    },
+    {
+      "id": "kidney",
+      "title": "신장·콩팥",
+      "position": "kidneys",
+      "health_area_ids": [
+        "kidney"
+      ],
+      "core_coverage_ids": [
+        "C068",
+        "C107",
+        "C103"
+      ],
+      "coverage_ids": [
+        "C068",
+        "C075",
+        "C086",
+        "C103",
+        "C104",
+        "C107"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": null,
+      "benefit_label": "말기신부전증 진단비 1회",
+      "health_hint": "건강검진의 신장 기능과 별도로 만성콩팥병 통계를 봅니다. 현재 만성콩팥병 진단을 뜻하지 않습니다.",
+      "insurance_note": "만성콩팥병 전체와 말기신부전은 다릅니다. 말기 진단비·이식수술비가 모든 만성콩팥병에 지급되지는 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "ckd",
+      "disease_label": "만성콩팥병",
+      "disease_icd": "N18",
+      "history_id": null,
+      "annual_id": "ckd",
+      "alternative_history_id": null,
+      "benchmark_id": "ckd_annual",
+      "context_id": "ckd_treated"
+    },
+    {
+      "id": "liver",
+      "title": "간·간담도",
+      "position": "liver",
+      "health_area_ids": [
+        "liver"
+      ],
+      "core_coverage_ids": [
+        "C010",
+        "C019",
+        "C018"
+      ],
+      "coverage_ids": [
+        "C010",
+        "C018",
+        "C019",
+        "C070",
+        "C075",
+        "C086",
+        "C103",
+        "C104",
+        "C107"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C010",
+      "benefit_label": "일반암 진단비 1회",
+      "health_hint": "간 기능은 기존 검진 판정을 유지합니다. 통계 비교용 대표 질환은 간암이며 개인 발병 예측이 아닙니다.",
+      "insurance_note": "같은 일반암 진단비를 여러 암 사례에 나누어 표시합니다. 각 페이지 금액을 더하지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "liver_cancer",
+      "disease_label": "간암",
+      "disease_icd": "C22",
+      "history_id": "liver_cancer",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "liver_cancer_patient_mean",
+      "context_id": "liver_cancer_all"
+    },
+    {
+      "id": "lung",
+      "title": "폐·호흡기",
+      "position": "lungs",
+      "health_area_ids": [
+        "lung"
+      ],
+      "core_coverage_ids": [
+        "C010",
+        "C019",
+        "C018"
+      ],
+      "coverage_ids": [
+        "C010",
+        "C018",
+        "C019",
+        "C069",
+        "C075",
+        "C086",
+        "C103",
+        "C104"
+      ],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": "C010",
+      "benefit_label": "일반암 진단비 1회",
+      "health_hint": "흉부촬영 판정과 별도로 폐암 통계를 살펴봅니다. 정상 촬영만으로 암 유무를 확정하지 않습니다.",
+      "insurance_note": "같은 일반암 진단비를 여러 암 사례에 나누어 표시합니다. 각 페이지 금액을 더하지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "lung_cancer",
+      "disease_label": "폐암",
+      "disease_icd": "C33-C34",
+      "history_id": "lung_cancer",
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "lung_cancer_patient_mean",
+      "context_id": "lung_cancer_all"
+    },
+    {
+      "id": "oral",
+      "title": "구강·치아",
+      "position": "mouth",
+      "health_area_ids": [
+        "oral"
+      ],
+      "core_coverage_ids": [],
+      "coverage_ids": [],
+      "incidence_id": null,
+      "cost_profile_id": null,
+      "demo_benefit_id": null,
+      "benefit_label": "치아 보장 비교항목 없음",
+      "health_hint": "구강검진 자료가 있으면 그 결과를 함께 확인합니다.",
+      "insurance_note": "현재 권장담보 목록에는 치아 항목이 없습니다. 임의의 권장금액을 만들지 않습니다.",
+      "risk_weighting_allowed": false,
+      "disease_key": "periodontal",
+      "disease_label": "치은염·치주질환",
+      "disease_icd": "K05",
+      "history_id": null,
+      "annual_id": null,
+      "alternative_history_id": null,
+      "benchmark_id": "periodontal_annual",
+      "context_id": "periodontal_treated"
+    }
+  ],
+  "semantic_coverage": {
+    "C001": {
+      "category": "사망",
+      "name": "질 병"
+    },
+    "C002": {
+      "category": "사망",
+      "name": "재해(상해)"
+    },
+    "C003": {
+      "category": "사망",
+      "name": "교통재해"
+    },
+    "C004": {
+      "category": "후유장해",
+      "name": "재해(상해) · 80%이상"
+    },
+    "C005": {
+      "category": "후유장해",
+      "name": "재해(상해) · 80%미만"
+    },
+    "C006": {
+      "category": "후유장해",
+      "name": "교통상해 · 80%이상"
+    },
+    "C007": {
+      "category": "후유장해",
+      "name": "교통상해 · 80%미만"
+    },
+    "C008": {
+      "category": "후유장해",
+      "name": "질병 · 80%이상"
+    },
+    "C009": {
+      "category": "후유장해",
+      "name": "질병 · 80%미만"
+    },
+    "C010": {
+      "category": "암",
+      "name": "진단비 · 일반암"
+    },
+    "C011": {
+      "category": "암",
+      "name": "진단비 · 소액암"
+    },
+    "C012": {
+      "category": "암",
+      "name": "진단비 · 유사암"
+    },
+    "C013": {
+      "category": "암",
+      "name": "진단비 · 고액암"
+    },
+    "C014": {
+      "category": "암",
+      "name": "진단비 · 특정암"
+    },
+    "C015": {
+      "category": "암",
+      "name": "진단비 · 전이암"
+    },
+    "C016": {
+      "category": "암",
+      "name": "진단비 · 재진단암"
+    },
+    "C017": {
+      "category": "암",
+      "name": "치료비 · 항암방사선"
+    },
+    "C018": {
+      "category": "암",
+      "name": "치료비 · 항암약물"
+    },
+    "C019": {
+      "category": "암",
+      "name": "치료비 · 암수술"
+    },
+    "C020": {
+      "category": "암",
+      "name": "치료비 · 로봇암수술"
+    },
+    "C021": {
+      "category": "암",
+      "name": "치료비 · 중환자실입원"
+    },
+    "C022": {
+      "category": "암",
+      "name": "치료비 · 표적항암약물허가"
+    },
+    "C023": {
+      "category": "암",
+      "name": "치료비 · 항암양성자방사선"
+    },
+    "C024": {
+      "category": "암",
+      "name": "치료비 · 항암세기조절방사선"
+    },
+    "C025": {
+      "category": "암",
+      "name": "치료비 · 특정면역항암"
+    },
+    "C026": {
+      "category": "암",
+      "name": "치료비 · 항암방사선중입자치료"
+    },
+    "C027": {
+      "category": "암",
+      "name": "치료비 · 항암호르몬약물치료"
+    },
+    "C028": {
+      "category": "암",
+      "name": "입원비 · 일반병원"
+    },
+    "C029": {
+      "category": "암",
+      "name": "입원비 · 요양병원"
+    },
+    "C030": {
+      "category": "암",
+      "name": "입원비 · 종합병원"
+    },
+    "C031": {
+      "category": "암",
+      "name": "입원비 · 상급종합병원"
+    },
+    "C032": {
+      "category": "암",
+      "name": "통원비 · 일반병원"
+    },
+    "C033": {
+      "category": "암",
+      "name": "통원비 · 종합병원"
+    },
+    "C034": {
+      "category": "암",
+      "name": "통원비 · 상급종합병원"
+    },
+    "C035": {
+      "category": "암",
+      "name": "중증(암)질환산정특례대상보장"
+    },
+    "C036": {
+      "category": "뇌",
+      "name": "진단비 · 뇌출혈"
+    },
+    "C037": {
+      "category": "뇌",
+      "name": "진단비 · 뇌졸중"
+    },
+    "C038": {
+      "category": "뇌",
+      "name": "진단비 · 뇌혈관질환"
+    },
+    "C039": {
+      "category": "뇌",
+      "name": "진단비 · 양성뇌종양"
+    },
+    "C040": {
+      "category": "뇌",
+      "name": "치료비 · 혈전용해치료비"
+    },
+    "C041": {
+      "category": "뇌",
+      "name": "치료비 · 혈전제거술(수술)"
+    },
+    "C042": {
+      "category": "뇌",
+      "name": "치료비 · 중환자실입원"
+    },
+    "C043": {
+      "category": "뇌",
+      "name": "입원비 · 일반병원"
+    },
+    "C044": {
+      "category": "뇌",
+      "name": "입원비 · 종합병원"
+    },
+    "C045": {
+      "category": "뇌",
+      "name": "입원비 · 상급병원"
+    },
+    "C046": {
+      "category": "뇌",
+      "name": "통원비 · 일반병원"
+    },
+    "C047": {
+      "category": "뇌",
+      "name": "통원비 · 종합병원"
+    },
+    "C048": {
+      "category": "뇌",
+      "name": "통원비 · 상급병원"
+    },
+    "C049": {
+      "category": "뇌",
+      "name": "중증질환자(뇌혈관)산정특례대상보장"
+    },
+    "C050": {
+      "category": "심장",
+      "name": "진단비 · 급성심근경색"
+    },
+    "C051": {
+      "category": "심장",
+      "name": "진단비 · 허혈성심장질환"
+    },
+    "C052": {
+      "category": "심장",
+      "name": "진단비 · 심장질환"
+    },
+    "C053": {
+      "category": "심장",
+      "name": "진단비 · 부정맥"
+    },
+    "C054": {
+      "category": "심장",
+      "name": "치료비 · 혈전용해치료비"
+    },
+    "C055": {
+      "category": "심장",
+      "name": "치료비 · 혈전제거술(수술)"
+    },
+    "C056": {
+      "category": "심장",
+      "name": "치료비 · 중환자실입원"
+    },
+    "C057": {
+      "category": "심장",
+      "name": "입원비 · 일반병원"
+    },
+    "C058": {
+      "category": "심장",
+      "name": "입원비 · 종합병원"
+    },
+    "C059": {
+      "category": "심장",
+      "name": "입원비 · 상급병원"
+    },
+    "C060": {
+      "category": "심장",
+      "name": "통원비 · 일반병원"
+    },
+    "C061": {
+      "category": "심장",
+      "name": "통원비 · 종합병원"
+    },
+    "C062": {
+      "category": "심장",
+      "name": "통원비 · 상급병원"
+    },
+    "C063": {
+      "category": "심장",
+      "name": "중증질환자(심장)산정특례대상보장"
+    },
+    "C064": {
+      "category": "의료보장",
+      "name": "간병 · LTC1급"
+    },
+    "C065": {
+      "category": "의료보장",
+      "name": "간병 · 경증치매"
+    },
+    "C066": {
+      "category": "의료보장",
+      "name": "간병 · LTC 1-인지등급 재가급여"
+    },
+    "C067": {
+      "category": "의료보장",
+      "name": "간병 · LTC 1-인지등급 시설급여"
+    },
+    "C068": {
+      "category": "의료보장",
+      "name": "진단비 · 말기신부전증"
+    },
+    "C069": {
+      "category": "의료보장",
+      "name": "진단비 · 말기폐질환"
+    },
+    "C070": {
+      "category": "의료보장",
+      "name": "진단비 · 말기간질환"
+    },
+    "C071": {
+      "category": "의료보장",
+      "name": "진단비 · 골절"
+    },
+    "C072": {
+      "category": "의료보장",
+      "name": "진단비 · 화상"
+    },
+    "C073": {
+      "category": "의료보장",
+      "name": "진단비 · 외상성뇌출혈"
+    },
+    "C074": {
+      "category": "의료보장",
+      "name": "진단비 · 외상성내장손상"
+    },
+    "C075": {
+      "category": "의료보장",
+      "name": "수술비 · 질병수술"
+    },
+    "C076": {
+      "category": "의료보장",
+      "name": "수술비 · 질병수술(제외)"
+    },
+    "C077": {
+      "category": "의료보장",
+      "name": "수술비 · 종합병원질병수술"
+    },
+    "C078": {
+      "category": "의료보장",
+      "name": "수술비 · 상급병원질병수술"
+    },
+    "C079": {
+      "category": "의료보장",
+      "name": "수술비 · 질병1-5종수술"
+    },
+    "C080": {
+      "category": "의료보장",
+      "name": "수술비 · 질병 ?대수술"
+    },
+    "C081": {
+      "category": "의료보장",
+      "name": "수술비 · ?대기관수술"
+    },
+    "C082": {
+      "category": "의료보장",
+      "name": "수술비 · 재해수술"
+    },
+    "C083": {
+      "category": "의료보장",
+      "name": "수술비 · 재해1-5종수술"
+    },
+    "C084": {
+      "category": "의료보장",
+      "name": "수술비 · 골절수술"
+    },
+    "C085": {
+      "category": "의료보장",
+      "name": "수술비 · 화상수술"
+    },
+    "C086": {
+      "category": "의료보장",
+      "name": "입원비 · 질병입원"
+    },
+    "C087": {
+      "category": "의료보장",
+      "name": "입원비 · 질병종합병원"
+    },
+    "C088": {
+      "category": "의료보장",
+      "name": "입원비 · 질병상급병원"
+    },
+    "C089": {
+      "category": "의료보장",
+      "name": "입원비 · 질병중환자실"
+    },
+    "C090": {
+      "category": "의료보장",
+      "name": "입원비 · 질병수술입원"
+    },
+    "C091": {
+      "category": "의료보장",
+      "name": "입원비 · 재해입원"
+    },
+    "C092": {
+      "category": "의료보장",
+      "name": "입원비 · 재해종합병원"
+    },
+    "C093": {
+      "category": "의료보장",
+      "name": "입원비 · 재해상급병원"
+    },
+    "C094": {
+      "category": "의료보장",
+      "name": "입원비 · 재해수술입원"
+    },
+    "C095": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인지원질병입원"
+    },
+    "C096": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인지원상해입원"
+    },
+    "C097": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인사용질병일당(요양병원제외)"
+    },
+    "C098": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인사용질병입원일당(요양병원)"
+    },
+    "C099": {
+      "category": "의료보장",
+      "name": "입원비 · 간호간병통합서비스질병입원일당"
+    },
+    "C100": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인사용상해일당(요양병원제외)"
+    },
+    "C101": {
+      "category": "의료보장",
+      "name": "입원비 · 간병인사용상해입원일당(요양병원)"
+    },
+    "C102": {
+      "category": "의료보장",
+      "name": "입원비 · 간호간병통합서비스상해입원일당"
+    },
+    "C103": {
+      "category": "실손의료비",
+      "name": "질병입원의료비"
+    },
+    "C104": {
+      "category": "실손의료비",
+      "name": "질병통원의료비"
+    },
+    "C105": {
+      "category": "실손의료비",
+      "name": "상해입원의료비"
+    },
+    "C106": {
+      "category": "실손의료비",
+      "name": "상해통원의료비"
+    },
+    "C107": {
+      "category": "중대질병",
+      "name": "수술비 · 5대장기이식"
+    },
+    "C108": {
+      "category": "중대질병",
+      "name": "수술비 · 관상동맥"
+    },
+    "C109": {
+      "category": "중대질병",
+      "name": "수술비 · 대동맥 인조혈관"
+    },
+    "C110": {
+      "category": "중대질병",
+      "name": "수술비 · 심장판막"
+    },
+    "C111": {
+      "category": "중대질병",
+      "name": "수술비 · 조혈모세포"
+    },
+    "C112": {
+      "category": "운전자",
+      "name": "사고처리지원금"
+    },
+    "C113": {
+      "category": "운전자",
+      "name": "사고처리지원금(6주미만치료)"
+    },
+    "C114": {
+      "category": "운전자",
+      "name": "변호사선임비용"
+    },
+    "C115": {
+      "category": "운전자",
+      "name": "벌금(대인)"
+    },
+    "C116": {
+      "category": "운전자",
+      "name": "벌금(대물)"
+    },
+    "C117": {
+      "category": "운전자",
+      "name": "자동차사고부상위로금"
+    },
+    "C118": {
+      "category": "배생책임",
+      "name": "가족일상 배상책임"
+    }
+  },
+  "minimum_observation_year": 2020,
+  "research_limits": {
+    "cancer_2022": {
+      "url": "https://www.cancer.go.kr/download.do?uuid=804f30d8-0e9b-43cc-b666-229cde27d10f.pdf",
+      "reason": "원문 16.8MB 크기 제한으로 읽지 못함. 2022년 데이터가 없다는 뜻이 아니며 현재 연령대 표 추가 시 반영."
+    },
+    "cohort_cost": "2020년 이후 관찰된 동일 질환의 신규 환자 첫 12·36·60개월 비용을 이번 조사에서 검증하지 못함. 기존의 2006년 등 비용/보간은 기본 적용에서 제거."
+  },
+  "version": "8.0",
+  "reference_version": "8.0",
+  "review_date": "2026-09-14",
+  "context_series": {
+    "ckd_treated": {
+      "disease_key": "ckd",
+      "metric": "treated_people",
+      "label": "전체 연령 진료인원",
+      "unit": "만 명",
+      "scope": "만성콩팥병 N18 · 전국 · 남녀 전체",
+      "source_id": "R6",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 30.2
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 32.6
+        }
+      ],
+      "note": "한 해 진료받은 인원이며 신규 발생률이 아닙니다. 천 명 단위 공표값을 만 명으로 환산했습니다."
+    },
+    "periodontal_treated": {
+      "disease_key": "periodontal",
+      "metric": "treated_population_percent",
+      "label": "연령군별 진료이용 비율",
+      "unit": "%",
+      "scope": "2022년 · 치은염·치주질환 · 남녀 전체",
+      "source_id": "R8",
+      "values": [
+        {
+          "label": "전체 인구",
+          "year": 2022,
+          "value": 35.2
+        },
+        {
+          "label": "20–59세",
+          "year": 2022,
+          "value": 38.4
+        },
+        {
+          "label": "60세 이상",
+          "year": 2022,
+          "value": 41.0
+        }
+      ],
+      "note": "해당 인구 중 치과 외래 진료를 받은 비율입니다. 신규 발병률·개인 예측확률이 아닙니다."
+    },
+    "gastric_all": {
+      "disease_key": "gastric",
+      "metric": "incidence_people_per_100k",
+      "label": "전체 인구 발생률",
+      "unit": "명/10만 명",
+      "scope": "위암 · 전국 · 남녀 전체",
+      "source_id": "R13",
+      "values": [
+        {
+          "label": "2020년",
+          "year": 2020,
+          "value": 52.4
+        },
+        {
+          "label": "2021년",
+          "year": 2021,
+          "value": 57.5
+        },
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 57.0
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 56.6
+        }
+      ],
+      "note": "현재 연령대 자료가 적용되지 않을 때 사용하는 전체 인구의 조발생률입니다. 개인 예측이 아닙니다."
+    },
+    "colorectal_all": {
+      "disease_key": "colorectal",
+      "metric": "incidence_people_per_100k",
+      "label": "전체 인구 발생률",
+      "unit": "명/10만 명",
+      "scope": "대장암 · 전국 · 남녀 전체",
+      "source_id": "R13",
+      "values": [
+        {
+          "label": "2020년",
+          "year": 2020,
+          "value": 55.4
+        },
+        {
+          "label": "2021년",
+          "year": 2021,
+          "value": 64.7
+        },
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 64.8
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 63.8
+        }
+      ],
+      "note": "현재 연령대 자료가 적용되지 않을 때 사용하는 전체 인구의 조발생률입니다. 개인 예측이 아닙니다."
+    },
+    "liver_cancer_all": {
+      "disease_key": "liver_cancer",
+      "metric": "incidence_people_per_100k",
+      "label": "전체 인구 발생률",
+      "unit": "명/10만 명",
+      "scope": "간암 · 전국 · 남녀 전체",
+      "source_id": "R13",
+      "values": [
+        {
+          "label": "2020년",
+          "year": 2020,
+          "value": 29.4
+        },
+        {
+          "label": "2021년",
+          "year": 2021,
+          "value": 29.3
+        },
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 28.8
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 28.8
+        }
+      ],
+      "note": "현재 연령대 자료가 적용되지 않을 때 사용하는 전체 인구의 조발생률입니다. 개인 예측이 아닙니다."
+    },
+    "lung_cancer_all": {
+      "disease_key": "lung_cancer",
+      "metric": "incidence_people_per_100k",
+      "label": "전체 인구 발생률",
+      "unit": "명/10만 명",
+      "scope": "폐암 · 전국 · 남녀 전체",
+      "source_id": "R13",
+      "values": [
+        {
+          "label": "2020년",
+          "year": 2020,
+          "value": 57.0
+        },
+        {
+          "label": "2021년",
+          "year": 2021,
+          "value": 61.9
+        },
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 62.6
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 64.4
+        }
+      ],
+      "note": "현재 연령대 자료가 적용되지 않을 때 사용하는 전체 인구의 조발생률입니다. 개인 예측이 아닙니다."
+    },
+    "diabetes_treated": {
+      "disease_key": "diabetes",
+      "metric": "treated_people",
+      "label": "전체 연령 진료인원",
+      "unit": "만 명",
+      "scope": "당뇨병 E10–E14 · 전국 · 남녀 전체",
+      "source_id": "R6",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 369.8
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value": 382.8
+        }
+      ],
+      "note": "연간 진료인원입니다. 신규 발병률이 아닙니다. 천 명 단위 원문값을 만 명으로 환산했습니다."
+    },
+    "stroke_treated": {
+      "disease_key": "stroke",
+      "metric": "treated_people",
+      "label": "전체 연령 진료인원",
+      "unit": "만 명",
+      "scope": "2022년 · 뇌졸중 I60–I64 · 전국",
+      "source_id": "R9",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 63.4177
+        }
+      ],
+      "note": "뇌졸중으로 한 해 진료받은 인원입니다. 첫 발병 사건이나 개인의 발생확률이 아닙니다."
+    },
+    "mi_related_treated": {
+      "disease_key": "mi",
+      "metric": "related_treated_people",
+      "label": "관련 심장질환 진료인원",
+      "unit": "만 명",
+      "scope": "2022년 · 허혈성심장질환 I20–I25 · 전국",
+      "source_id": "R10",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value": 102.7842
+        }
+      ],
+      "note": "심근경색을 포함한 허혈성심장질환 환자군입니다. 심근경색만의 인원·발생률이 아닙니다."
+    }
+  },
+  "benchmarks": {
+    "stroke_annual": {
+      "disease_key": "stroke",
+      "kind": "annual_patient_mean",
+      "label": "뇌졸중 연간 진료비",
+      "scope": "2022년 · 뇌졸중 I60–I64 · 전 연령",
+      "unit": "만원",
+      "scale_won": 10000,
+      "source_id": "R9",
+      "values": [
+        {
+          "label": "전체 환자",
+          "year": 2022,
+          "value_won": 3856456
+        },
+        {
+          "label": "입원 환자",
+          "year": 2022,
+          "value_won": 15933575
+        },
+        {
+          "label": "외래 환자",
+          "year": 2022,
+          "value_won": 268740
+        }
+      ],
+      "note": "각 환자군의 연간 평균입니다. 입원·외래를 더하지 않으며 신규 발병 첫해 비용은 아닙니다.",
+      "comparison_allowed": false
+    },
+    "mi_procedures": {
+      "disease_key": "mi",
+      "kind": "related_procedure_mean",
+      "label": "관련 수술의 진료비",
+      "scope": "2022년 · 협심증·심근경색 수술환자",
+      "unit": "만원",
+      "scale_won": 10000,
+      "source_id": "R10",
+      "values": [
+        {
+          "label": "관상동맥 중재술",
+          "year": 2022,
+          "value_won": 2307465
+        },
+        {
+          "label": "관상동맥 우회술",
+          "year": 2022,
+          "value_won": 9810196
+        }
+      ],
+      "note": "1인당 해당 수술행위 진료비입니다. 심근경색 단독 또는 입원 전체 비용이 아닙니다.",
+      "comparison_allowed": false
+    },
+    "diabetes_annual": {
+      "disease_key": "diabetes",
+      "kind": "annual_patient_mean",
+      "label": "당뇨병 연간 진료비",
+      "scope": "전 연령 · 진료환자 1인당 · 약국 포함",
+      "unit": "만원",
+      "scale_won": 10000,
+      "source_id": "R6",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value_won": 925716.603569497
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value_won": 946551.724137931
+        }
+      ],
+      "note": "공표된 총진료비÷진료인원으로 계산한 근사 평균입니다. 첫해·3년·5년 추적비용이 아닙니다.",
+      "comparison_allowed": false
+    },
+    "ckd_annual": {
+      "disease_key": "ckd",
+      "kind": "annual_patient_mean",
+      "label": "만성콩팥병 연간 진료비",
+      "scope": "전 연령 · 진료환자 1인당 · 약국 포함",
+      "unit": "만원",
+      "scale_won": 10000,
+      "source_id": "R6",
+      "values": [
+        {
+          "label": "2022년",
+          "year": 2022,
+          "value_won": 8337417.218543046
+        },
+        {
+          "label": "2023년",
+          "year": 2023,
+          "value_won": 8181288.343558283
+        }
+      ],
+      "note": "공표된 총진료비÷진료인원으로 계산한 근사 평균입니다. 투석환자만의 평균이 아닙니다.",
+      "comparison_allowed": false
+    },
+    "periodontal_annual": {
+      "disease_key": "periodontal",
+      "kind": "older_outpatient_mean",
+      "label": "치주질환 연간 외래 진료비",
+      "scope": "2024년 · 65세 이상 외래환자 1인당",
+      "unit": "만원",
+      "scale_won": 10000,
+      "source_id": "R12",
+      "values": [
+        {
+          "label": "남자 65세 이상",
+          "year": 2024,
+          "value_won": 144000
+        },
+        {
+          "label": "여자 65세 이상",
+          "year": 2024,
+          "value_won": 137000
+        }
+      ],
+      "note": "65세 이상 참고집단의 비용입니다. 현재 나이의 평균이나 임플란트 가격으로 해석하지 않습니다.",
+      "comparison_allowed": false
+    },
+    "gastric_patient_mean": {
+      "disease_key": "gastric",
+      "kind": "annual_patient_mean",
+      "display_kind": "care_setting_mean",
+      "source_id": "R14",
+      "label": "위암 1인당 진료비",
+      "scope": "2025년 심사결정 · 전 연령 · 한방·약국 제외",
+      "unit": "만원",
+      "scale_won": 10000,
+      "comparison_allowed": false,
+      "note": "입원·외래는 다른 환자군의 평균으로 합산하지 않습니다. 발병 첫해·본인부담금이 아닙니다.",
+      "values": [
+        {
+          "year": 2025,
+          "label": "입원",
+          "icd": "C16",
+          "care_setting": "입원",
+          "patients": 40849,
+          "value_won": 11273781
+        },
+        {
+          "year": 2025,
+          "label": "외래",
+          "icd": "C16",
+          "care_setting": "외래",
+          "patients": 156790,
+          "value_won": 1304474
+        }
+      ]
+    },
+    "liver_cancer_patient_mean": {
+      "disease_key": "liver_cancer",
+      "kind": "annual_patient_mean",
+      "display_kind": "care_setting_mean",
+      "source_id": "R14",
+      "label": "간암·간내담관암 1인당 진료비",
+      "scope": "2025년 심사결정 · 전 연령 · 한방·약국 제외",
+      "unit": "만원",
+      "scale_won": 10000,
+      "comparison_allowed": false,
+      "note": "입원·외래는 다른 환자군의 평균으로 합산하지 않습니다. 발병 첫해·본인부담금이 아닙니다.",
+      "values": [
+        {
+          "year": 2025,
+          "label": "입원",
+          "icd": "C22",
+          "care_setting": "입원",
+          "patients": 36161,
+          "value_won": 14429448
+        },
+        {
+          "year": 2025,
+          "label": "외래",
+          "icd": "C22",
+          "care_setting": "외래",
+          "patients": 75464,
+          "value_won": 3070861
+        }
+      ]
+    },
+    "lung_cancer_patient_mean": {
+      "disease_key": "lung_cancer",
+      "kind": "annual_patient_mean",
+      "display_kind": "care_setting_mean",
+      "source_id": "R14",
+      "label": "기관지·폐암 1인당 진료비",
+      "scope": "2025년 심사결정 · 전 연령 · 한방·약국 제외",
+      "unit": "만원",
+      "scale_won": 10000,
+      "comparison_allowed": false,
+      "note": "비용은 C34 기준으로 상단 C33~C34 발생통계보다 범위가 좁습니다. 입원·외래 합산 및 첫해 비용 해석 금지.",
+      "values": [
+        {
+          "year": 2025,
+          "label": "입원",
+          "icd": "C34",
+          "care_setting": "입원",
+          "patients": 56230,
+          "value_won": 13419976
+        },
+        {
+          "year": 2025,
+          "label": "외래",
+          "icd": "C34",
+          "care_setting": "외래",
+          "patients": 133474,
+          "value_won": 4265157
+        }
+      ]
+    },
+    "colorectal_patient_mean": {
+      "disease_key": "colorectal",
+      "kind": "annual_patient_mean",
+      "display_kind": "care_setting_mean",
+      "source_id": "R14",
+      "label": "대장암 세부부위별 1인당 진료비",
+      "scope": "2025년 심사결정 · 전 연령 · 한방·약국 제외",
+      "unit": "만원",
+      "scale_won": 10000,
+      "comparison_allowed": false,
+      "note": "결장 C18·직장 C20을 각각 표시합니다. C19 미포함으로 전체 대장암 평균이 아닙니다. 입원·외래 합산 금지.",
+      "values": [
+        {
+          "year": 2025,
+          "label": "결장암 · 입원",
+          "icd": "C18",
+          "care_setting": "입원",
+          "patients": 27325,
+          "value_won": 14764857
+        },
+        {
+          "year": 2025,
+          "label": "결장암 · 외래",
+          "icd": "C18",
+          "care_setting": "외래",
+          "patients": 87143,
+          "value_won": 1558784
+        },
+        {
+          "year": 2025,
+          "label": "직장암 · 입원",
+          "icd": "C20",
+          "care_setting": "입원",
+          "patients": 17289,
+          "value_won": 11917378
+        },
+        {
+          "year": 2025,
+          "label": "직장암 · 외래",
+          "icd": "C20",
+          "care_setting": "외래",
+          "patients": 65077,
+          "value_won": 1943457
+        }
+      ]
+    }
+  },
+  "fallback_policy": {
+    "order": [
+      "age_band_incidence",
+      "all_population_incidence",
+      "age_band_prevalence",
+      "treated_population",
+      "related_evidence"
+    ],
+    "rename_labels": true,
+    "no_fabricated_cohort_cost": true,
+    "numeric_reference_panels_required": true
+  },
+  "institution_search_review": [
+    {
+      "institution": "보험개발원",
+      "url": "https://www.kidi.or.kr/home/homeIndex.do",
+      "result": "공개 통계·보고서와 BIGIN을 확인. 이번 조회에서 질환별 평균 가입금액·지급액의 검증 가능한 세부표를 확보하지 못함."
+    },
+    {
+      "institution": "생명보험협회",
+      "url": "https://www.klia.or.kr/consumer/stats/yearBook/list.do?lang=KOR&year=2024",
+      "result": "보험종류별·회사별 계약·지급 총계 확인. 특정 질환의 가입자 평균으로 재분류하지 않음."
+    },
+    {
+      "institution": "손해보험협회",
+      "url": "https://kpub.knia.or.kr/etcb/InCompSaleDicLong.knia",
+      "result": "장기보험 회사별 지급·부지급 등 공시 확인. 질환별 보장금액 평균의 대체자료로 사용하지 않음."
+    }
+  ]
+}

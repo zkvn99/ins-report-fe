@@ -1,0 +1,22 @@
+{
+  "rule_version": "1.0",
+  "description": "운영 DB로 이전하기 전 로컬 룰 예시. enabled=false 예시는 설명용이며 자동 적용되지 않습니다.",
+  "rules": [
+    {
+      "id": "EXAMPLE-MI-DIAGNOSIS",
+      "enabled": false,
+      "priority": 100,
+      "provider_type": "MERITZ_REPORT",
+      "company_pattern": null,
+      "product_pattern": null,
+      "source_group_pattern": null,
+      "rider_pattern": "^급성심근경색(증)?진단(비|특약)?$",
+      "target_coverage_id": "C050",
+      "mapping_type": "DIRECT",
+      "aggregation_type": "SUM",
+      "payment_type": "fixed_amount",
+      "benefit_pool_strategy": null,
+      "note": "예시 룰. 실제 운영 시 원문 상품별 약관 범위를 검증한 뒤 활성화하세요."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "version": "2.0",
+  "report_date": null,
+  "customer": {
+    "name": null,
+    "birth_date": null,
+    "age": null,
+    "sex": null
+  },
+  "health": {
+    "source": {
+      "provider": null,
+      "checkup_date": null,
+      "institution": null
+    },
+    "metrics": [],
+    "area_notes": []
+  },
+  "insurance": {
+    "source_label": null,
+    "as_of_date": null,
+    "source_complete": false,
+    "coverages": []
+  },
+  "standards": [],
+  "issues": []
+}
