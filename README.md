@@ -1,76 +1,30 @@
-# 건강자산 & 보장분석 - Vue Refactor
+# 건강자산 & 보장분석
 
-기존 단일 HTML 시안을 Vue 3 + Vite 기반으로 다시 분리한 유지보수용 프로젝트입니다.
+Vue 3 기반의 자료 업로드와 Report JSON Renderer입니다. 보험 매핑, 건강 판정, 통계 선택, AI 호출은 Backend 책임이며 이 프로젝트는 결과 Report JSON만 A4 형식으로 표시합니다.
 
-## 목표
-
-```text
-PDF / Excel
-   ↓ AI Extractor
-customer_input_v2.json
-   ↓
-Normalizer / Validator
-   ↓
-Health / Insurance / Statistics Engine
-   ↓
-ReportViewModel
-   ↓
-Vue A4 Renderer
-   ↓
-HTML / PDF
-```
-
-AI는 원문 사실 추출에 집중하고 계산·합산·페이지 출력은 코드가 담당합니다.
-
-## 바로 실행
-
-macOS:
-
-```bash
-./setup-mac.sh
-npm run dev
-```
-
-이미 Node가 있으면:
+## 실행
 
 ```bash
 npm install
-npm run check:data
 npm run dev
 ```
 
-## 고객 데이터 넣기
+`.env.example`을 복사해 API 주소를 설정합니다.
 
-`examples/customer-input.example.json`을 먼저 넣어 동작을 확인합니다.
+```dotenv
+VITE_API_BASE_URL=http://localhost:8080
+```
 
-실제 고객 자료는 `prompts/SHORT_START_PROMPT.txt`와 `prompts/CUSTOMER_JSON_PROMPT.txt`를 사용해 JSON으로 만듭니다.
+## 화면
 
-## 빌드
+- `/upload`: 건강검진 PDF, 보험 보장분석 PDF, 선택 권장금액 XLS/XLSX 업로드
+- `/analysis/:analysisId`: Backend 분석 상태 조회
+- `/report/:reportId`: Backend Report JSON 조회 및 A4 출력
+- `/render`: 사용자가 붙여넣거나 선택한 Report JSON 렌더링
+
+## 검증과 빌드
 
 ```bash
-npm run build:single
+npm test
+npm run build
 ```
-
-결과:
-
-```text
-dist/health-asset-report.html
-```
-
-브라우저에서 JSON을 불러온 뒤 `인쇄 · PDF`를 사용합니다.
-
-## 문서
-
-- `docs/MAC_SETUP.md`
-- `docs/ARCHITECTURE.md`
-- `docs/INPUT_FORMAT.md`
-- `docs/INSURANCE_MAPPING_RULES.md`
-- `docs/MAINTENANCE.md`
-
-## 중요한 설계 결정
-
-- Vue Router 없음: 보고서는 SPA 라우팅이 필요하지 않습니다.
-- Pinia 없음: 고객 한 건의 보고서 상태만 다루므로 composable 하나로 충분합니다.
-- TypeScript 강제 없음: JavaScript 모듈을 작게 유지합니다.
-- 이전 V4~V9 함수 override 없음.
-- v1 입력 호환코드는 런타임에서 제거했습니다. 필요하면 별도 일회성 변환 스크립트로 처리합니다.

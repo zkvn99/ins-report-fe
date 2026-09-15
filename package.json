@@ -9,11 +9,11 @@
     "build:single": "vite build && node scripts/inline-dist.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run",
-    "test:watch": "vitest",
-    "check:data": "node scripts/check-data.mjs"
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "vue": "^3.5.0"
+    "vue": "^3.5.0",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",

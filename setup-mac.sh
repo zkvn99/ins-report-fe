@@ -14,7 +14,6 @@ fi
 node -v
 npm -v
 npm install
-npm run check:data
 
 echo ""
 echo "설치 완료"

@@ -34,7 +34,6 @@ ZIP을 풀고 프로젝트 폴더에서:
 
 ```bash
 npm install
-npm run check:data
 npm run dev
 ```
 
