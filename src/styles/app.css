@@ -1,0 +1,264 @@
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-badge {
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.app-nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.app-nav button,
+.secondary,
+.primary {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--navy);
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.app-nav button.active,
+.primary {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.form-error {
+  width: min(900px, calc(100% - 32px));
+  margin: 18px auto 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #f3c5c9;
+  color: #9b3841;
+  background: #fff0f1;
+}
+
+.upload-panel,
+.analysis-panel,
+.review-panel,
+.dev-panel {
+  width: min(980px, calc(100% - 32px));
+  margin: 28px auto;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(25, 61, 80, 0.04);
+}
+
+.upload-panel h1,
+.analysis-panel h2,
+.review-panel h2,
+.dev-panel h2 {
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.upload-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.upload-field {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  background: #fbfdfd;
+}
+
+.upload-field span {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.upload-field input {
+  width: 100%;
+}
+
+.upload-field small {
+  color: var(--muted);
+}
+
+.upload-actions,
+.dev-actions,
+.review-header,
+.dev-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.progress-wrap {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.progress-bar {
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #edf2f3;
+  border: 1px solid var(--line);
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy), var(--teal));
+}
+
+.review-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.review-item header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.review-item h3 {
+  margin: 0;
+  color: var(--navy);
+}
+
+.review-item p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.review-type {
+  display: inline-block;
+  padding: 6px 8px;
+  background: #eef7f5;
+  color: var(--teal-dark);
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.review-item dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.review-item dt {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.review-item dd {
+  margin: 0;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.review-candidates {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.review-candidates label {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.review-candidates select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.empty-box {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  background: #fafcfc;
+}
+
+.dev-toggle button.active {
+  background: var(--teal);
+  color: white;
+  border-color: var(--teal);
+}
+
+.json-label {
+  display: block;
+  margin-top: 16px;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+textarea {
+  min-height: 240px;
+  resize: vertical;
+  margin-top: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dev-error {
+  color: #9b3841;
+  background: #fff0f1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.dev-preview {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.report-view {
+  width: 100%;
+  overflow-x: auto;
+}

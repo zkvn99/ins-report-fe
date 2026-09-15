@@ -39,7 +39,7 @@ export default {
   computed: {
     record() { return this.report.health.recentRecordDisplay },
     priorityAreas() {
-      const ranked = [...this.report.health.areas].sort((a, b) => ({ action: 0, watch: 1, good: 2, info: 3, unknown: 4 }[a.state] - ({ action: 0, watch: 1, good: 2, info: 3, unknown: 4 }[b.state]))
+      const ranked = [...this.report.health.areas].sort((a, b) => ({ action: 0, watch: 1, good: 2, info: 3, unknown: 4 }[a.state] - ({ action: 0, watch: 1, good: 2, info: 3, unknown: 4 }[b.state])))
       return ranked.slice(0, 6)
     }
   }
