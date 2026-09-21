@@ -3,6 +3,8 @@
     <RouterLink class="brand" to="/upload">건강자산 &amp; 보장분석</RouterLink>
     <nav class="app-nav" aria-label="주요 메뉴">
       <RouterLink to="/upload">자료 분석</RouterLink>
+      <RouterLink to="/login">로그인</RouterLink>
+      <RouterLink to="/signup">회원가입</RouterLink>
       <RouterLink to="/render">JSON 렌더링</RouterLink>
     </nav>
   </header>

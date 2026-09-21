@@ -8,5 +8,10 @@ export default defineConfig({
     assetsInlineLimit: Number.MAX_SAFE_INTEGER,
     cssCodeSplit: false,
     sourcemap: true
+  },
+  server: {
+    allowedHosts: [
+        '.trycloudflare.com'
+    ]
   }
 })

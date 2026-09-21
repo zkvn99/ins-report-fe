@@ -18,8 +18,7 @@ const dragging = ref(false)
 const extensions = computed(() => props.accept.split(',').map(value => value.trim().toLowerCase()))
 
 function valid(file) {
-  const hasAcceptedMime = !file.type || props.mimeTypes.length === 0 || props.mimeTypes.includes(file.type)
-  return hasAcceptedMime && isAcceptedFile(file, extensions.value)
+  return isAcceptedFile(file, extensions.value, props.mimeTypes)
 }
 
 function add(files) {
