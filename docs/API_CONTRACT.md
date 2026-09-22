@@ -37,6 +37,7 @@ FE의 `httpClient`에서 성공 응답의 `data`를 한 번만 unwrap한다.
 POST /api/v1/analysis
 GET  /api/v1/analysis/{analysisId}
 GET  /api/v1/reports/{reportId}
+GET  /api/v1/reports/{reportId}/pdf
 ```
 
 업로드 Multipart Field:
@@ -79,8 +80,17 @@ RECEIVED
 
 `reportId`는 `status == COMPLETED`인 경우에만 필수다.
 
-`GET /api/v1/reports/{reportId}`는 저장된 Extraction v1 report envelope을 반환한다.
-Frontend는 `renderKey`로 Renderer를 선택하며 브라우저 메모리 저장소에 의존하지 않는다.
+`GET /api/v1/reports/{reportId}`는 Extraction 원문이 아니라 Backend가 계산해 저장한
+최종 `ReportRenderModel`을 반환한다. Frontend는 `reportValidator` 검증 후
+`ReportView -> ReportDocument`로 표시하며 보장 매핑, 권장금액, gap, 건강상태 또는
+통계를 다시 계산하지 않는다.
+
+최종 모델은 `health.areas`, 전체 `health.metrics`, `insurance.coverages[118]`,
+`diseaseModules[9]`, `coveragePages`, `recommendations`, `statistics`와 기준 데이터
+버전을 포함한다.
+
+PDF 버튼은 `GET /api/v1/reports/{reportId}/pdf`의 binary 응답을 다운로드한다.
+파일명은 `medicover-report-{reportId}.pdf`이며 브라우저 인쇄본은 최종 PDF가 아니다.
 
 ## 3. 계약 변경 규칙
 

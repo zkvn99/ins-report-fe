@@ -14,7 +14,7 @@ import ReportPage from '../components/ReportPage.vue'
       <article v-for="source in items" :key="source.id" class="source-card">
         <div class="source-id">[{{ source.id }}]</div>
         <div>
-          <h3>{{ source.short || source.title || source.id }}</h3>
+          <h3>{{ source.shortName || source.title || source.id }}</h3>
           <p>{{ source.dataPeriod || '' }} {{ source.publicationYear ? `· ${source.publicationYear}` : '' }}</p>
           <a v-if="source.url" :href="source.url" target="_blank" rel="noopener">원문 보기</a>
         </div>

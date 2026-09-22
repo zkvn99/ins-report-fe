@@ -10,6 +10,31 @@ export async function request(path, options = {}) {
   return execute(path, options, false)
 }
 
+export async function requestBinary(path, options = {}) {
+  return executeBinary(path, options, false)
+}
+
+async function executeBinary(path, options, retried) {
+  const response = await fetch(`${API_BASE_URL}${path}`, {
+    ...options,
+    credentials: 'include',
+    headers: { Accept: 'application/pdf', ...(options.headers || {}) }
+  })
+  if (!response.ok) {
+    const contentType = response.headers.get('content-type') || ''
+    const body = contentType.includes('application/json') ? await response.json() : await response.text()
+    const message = typeof body === 'string' ? body : body?.errorMessage || body?.message || 'PDF를 생성하지 못했습니다.'
+    if (shouldRefresh(path, options.method, response.status, body, retried)) {
+      await refreshAccessToken()
+      return executeBinary(path, options, true)
+    }
+    if (body?.errorCode === SESSION_REPLACED_CODE) notifySessionReplaced()
+    notifyError(message)
+    throw new Error(message)
+  }
+  return response.blob()
+}
+
 async function execute(path, options, retried) {
   const { headers = {}, ...requestOptions } = options
   const response = await fetch(`${API_BASE_URL}${path}`, {

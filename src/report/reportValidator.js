@@ -5,8 +5,14 @@ export function validateReportData(reportData) {
     return { valid: false, errors: [{ code: 'REPORT_EMPTY', message: 'Report JSON이 비어 있습니다.' }] }
   }
 
+  if (reportData.renderKey !== 'HEALTH_INSURANCE_REPORT_V1') {
+    errors.push({ code: 'REPORT_UNSUPPORTED_RENDER_KEY', message: '지원하지 않는 리포트 형식입니다.' })
+  }
+
   if (!reportData.meta || typeof reportData.meta !== 'object') {
     errors.push({ code: 'REPORT_MISSING_META', message: 'meta가 필요합니다.' })
+  } else if (!reportData.meta.pipelineVersion || !reportData.meta.coverageCatalogVersion || !reportData.meta.mappingRuleVersion || !reportData.meta.statisticsVersion) {
+    errors.push({ code: 'REPORT_INVALID_META_VERSION', message: '리포트 기준 데이터 버전이 필요합니다.' })
   }
 
   if (!reportData.customer || typeof reportData.customer !== 'object') {
@@ -27,12 +33,21 @@ export function validateReportData(reportData) {
     errors.push({ code: 'REPORT_INVALID_INSURANCE_COVERAGES', message: 'insurance.coverages는 배열이어야 합니다.' })
   }
 
+  if (Array.isArray(reportData.insurance?.coverages) && reportData.insurance.coverages.length !== 118) {
+    errors.push({ code: 'REPORT_INVALID_COVERAGE_COUNT', message: '표준 보장항목은 118개여야 합니다.' })
+  }
+
   if (!Array.isArray(reportData.insurance?.supplemental)) {
     errors.push({ code: 'REPORT_INVALID_INSURANCE_SUPPLEMENTAL', message: 'insurance.supplemental는 배열이어야 합니다.' })
   }
 
   if (!reportData.summary || typeof reportData.summary !== 'object') {
     errors.push({ code: 'REPORT_MISSING_SUMMARY', message: 'summary가 필요합니다.' })
+  }
+
+
+  if (reportData.summary?.totalCoverageCount !== reportData.insurance?.coverages?.length) {
+    errors.push({ code: 'REPORT_COVERAGE_SUMMARY_MISMATCH', message: '보장항목 합계가 일치하지 않습니다.' })
   }
 
   for (const [key, message] of [
@@ -45,6 +60,11 @@ export function validateReportData(reportData) {
 
   if (!Array.isArray(reportData.statistics?.sources)) {
     errors.push({ code: 'REPORT_INVALID_STATISTICS_SOURCES', message: 'statistics.sources는 배열이어야 합니다.' })
+  }
+
+
+  if (!Array.isArray(reportData.statistics?.modules)) {
+    errors.push({ code: 'REPORT_INVALID_STATISTICS_MODULES', message: 'statistics.modules는 배열이어야 합니다.' })
   }
 
   return {
