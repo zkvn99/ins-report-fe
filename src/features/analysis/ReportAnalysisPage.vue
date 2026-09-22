@@ -23,8 +23,6 @@ async function sync() {
     } else if (result.status === 'FAILED') {
       stopPolling()
       error.value = result.message || '분석에 실패했습니다.'
-    } else if (result.status === 'REVIEW_REQUIRED') {
-      stopPolling()
     }
   } catch (cause) {
     stopPolling()
@@ -41,7 +39,6 @@ onBeforeUnmount(stopPolling)
     <div class="analysis-title"><LoadingSpinner /><h1>분석 진행</h1></div>
     <div class="progress-wrap"><div class="progress-bar"><span :style="{ width: `${Math.min(100, status.progress)}%` }" /></div><strong>{{ status.progress }}%</strong></div>
     <p>{{ status.message }}</p>
-    <AppAlert v-if="status.status === 'REVIEW_REQUIRED'" type="info">추가 검토가 필요한 자료입니다.</AppAlert>
     <AppAlert v-if="error">{{ error }}</AppAlert>
   </section>
 </template>

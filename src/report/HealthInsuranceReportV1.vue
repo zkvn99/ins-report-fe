@@ -63,14 +63,16 @@ function shown(value) {
 
     <section class="report-section">
       <h2>문서와 Usage</h2>
-      <ul><li v-for="document in result.documents" :key="document.documentId">{{ document.documentId }} — {{ document.filename }}</li></ul>
+      <ul><li v-for="document in result.documents" :key="document.documentId">{{ document.documentId }} · {{ document.type }} — {{ document.filename }}</li></ul>
       <dl class="usage-grid">
         <div><dt>Model</dt><dd>{{ result.usage.model }}</dd></div>
         <div><dt>Input</dt><dd>{{ result.usage.inputTokens }}</dd></div>
         <div><dt>Output</dt><dd>{{ result.usage.outputTokens }}</dd></div>
         <div><dt>Total</dt><dd>{{ result.usage.totalTokens }}</dd></div>
         <div><dt>Elapsed</dt><dd>{{ result.usage.elapsedMs }} ms</dd></div>
-        <div><dt>PDF</dt><dd>{{ result.usage.fileCount }}개</dd></div>
+        <div><dt>Files</dt><dd>{{ result.usage.fileCount }}개</dd></div>
+        <div><dt>PDF</dt><dd>{{ result.usage.pdfCount }}개</dd></div>
+        <div><dt>Excel</dt><dd>{{ result.usage.excelCount }}개</dd></div>
         <div><dt>Bytes</dt><dd>{{ result.usage.totalBytes }}</dd></div>
       </dl>
     </section>

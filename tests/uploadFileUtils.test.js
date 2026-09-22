@@ -18,6 +18,11 @@ describe('upload file handling', () => {
     expect(isAcceptedFile({ name: 'health.pdf', type: 'text/plain' }, ['.pdf'], ['application/pdf'])).toBe(false)
   })
 
+  it('accepts Excel extensions for the recommendation amount file', () => {
+    expect(isAcceptedFile({ name: 'recommendation.xlsx' }, ['.xls', '.xlsx'])).toBe(true)
+    expect(isAcceptedFile({ name: 'recommendation.pdf' }, ['.xls', '.xlsx'])).toBe(false)
+  })
+
   it('adds multiple dropped files without duplicates', () => {
     expect(addUniqueFiles([pdf], [pdf, otherPdf])).toEqual([pdf, otherPdf])
   })
@@ -43,6 +48,13 @@ describe('upload file handling', () => {
   it('allows a removed file to be added again', () => {
     const remainingFiles = addUniqueFiles([pdf, otherPdf], []).filter(file => file !== pdf)
     expect(addUniqueFiles(remainingFiles, [pdf])).toEqual([otherPdf, pdf])
+  })
+
+  it('replaces the optional Excel when only one file is allowed', () => {
+    const previous = { name: 'old.xlsx', size: 30, lastModified: 3 }
+    const replacement = { name: 'new.xlsx', size: 40, lastModified: 4 }
+
+    expect(addUniqueFiles([previous], [replacement], false)).toEqual([replacement])
   })
 
   it('uses the backend multipart field names', () => {

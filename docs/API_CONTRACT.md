@@ -34,17 +34,27 @@ FE의 `httpClient`에서 성공 응답의 `data`를 한 번만 unwrap한다.
 ## 2. v1 API
 
 ```text
-POST /api/v1/report-analyses
-GET  /api/v1/report-analyses/{analysisId}
+POST /api/v1/analysis
+GET  /api/v1/analysis/{analysisId}
 GET  /api/v1/reports/{reportId}
 ```
 
 업로드 Multipart Field:
 
 ```text
-healthFiles[]
-insuranceFiles[]
-standardFile?      # 선택: xls/xlsx
+files[]  # PDF 1개 이상 + Excel 0~1개
+```
+
+POST 응답:
+
+```json
+{
+  "analysisId": "UUID",
+  "status": "RECEIVED",
+  "progress": 0,
+  "message": "분석 요청이 등록되었습니다.",
+  "reportId": null
+}
 ```
 
 분석 상태 응답 예시:
@@ -64,10 +74,13 @@ standardFile?      # 선택: xls/xlsx
 ```text
 RECEIVED
   -> PROCESSING
-  -> REVIEW_REQUIRED | COMPLETED | FAILED
+  -> COMPLETED | FAILED
 ```
 
 `reportId`는 `status == COMPLETED`인 경우에만 필수다.
+
+`GET /api/v1/reports/{reportId}`는 저장된 Extraction v1 report envelope을 반환한다.
+Frontend는 `renderKey`로 Renderer를 선택하며 브라우저 메모리 저장소에 의존하지 않는다.
 
 ## 3. 계약 변경 규칙
 

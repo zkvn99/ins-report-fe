@@ -19,7 +19,7 @@ describe('HTTP client', () => {
       data: { analysisId: 'analysis-1' }
     })))
 
-    await expect(request('/api/v1/report-analyses')).resolves.toEqual({ analysisId: 'analysis-1' })
+    await expect(request('/api/v1/analysis')).resolves.toEqual({ analysisId: 'analysis-1' })
   })
 
   it('uses the API error message for a failed response', async () => {
@@ -29,7 +29,7 @@ describe('HTTP client', () => {
       errorMessage: 'PDF를 처리할 수 없습니다.'
     }, 400)))
 
-    await expect(request('/api/v1/report-analyses')).rejects.toThrow('PDF를 처리할 수 없습니다.')
+    await expect(request('/api/v1/analysis')).rejects.toThrow('PDF를 처리할 수 없습니다.')
   })
 
   it('does not set a multipart Content-Type header for FormData', async () => {
@@ -37,7 +37,7 @@ describe('HTTP client', () => {
     vi.stubGlobal('fetch', fetchMock)
     const formData = new FormData()
 
-    await request('/api/v1/report-analyses', { method: 'POST', body: formData })
+    await request('/api/v1/analysis', { method: 'POST', body: formData })
 
     expect(fetchMock.mock.calls[0][1].body).toBe(formData)
     expect(fetchMock.mock.calls[0][1].headers).toEqual({ Accept: 'application/json' })
