@@ -1,5 +1,8 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'
+import { notifyError } from '../shared/notificationStore.js'
 const EXPIRED_TOKEN_CODE = 'AUTH_401_EXPIRED_TOKEN'
+const SESSION_REPLACED_CODE = 'AUTH_401_SESSION_REPLACED'
+export const SESSION_REPLACED_EVENT = 'medicover:session-replaced'
 const REFRESH_PATH = '/api/v1/auth/refresh'
 let refreshPromise = null
 
@@ -31,17 +34,33 @@ async function execute(path, options, retried) {
     const error = new Error(message || `요청에 실패했습니다. (${response.status})`)
     error.status = response.status
     error.errorCode = responseBody?.errorCode
+    if (error.errorCode === SESSION_REPLACED_CODE) {
+      notifySessionReplaced()
+      notifyError(message)
+    } else if (shouldNotifyError(path, response.status)) {
+      notifyError(message || `요청에 실패했습니다. (${response.status})`)
+    }
     throw error
   }
 
   if (responseBody && typeof responseBody === 'object' && typeof responseBody.success === 'boolean') {
     if (!responseBody.success) {
-      throw new Error(responseBody.errorMessage || '요청에 실패했습니다.')
+      const error = new Error(responseBody.errorMessage || '요청에 실패했습니다.')
+      notifyError(error.message)
+      throw error
     }
     return responseBody.data
   }
 
   return responseBody
+}
+
+function notifySessionReplaced() {
+  if (typeof window !== 'undefined') window.dispatchEvent(new Event(SESSION_REPLACED_EVENT))
+}
+
+function shouldNotifyError(path, status) {
+  return !(path === '/api/v1/auth/me' && status === 401)
 }
 
 function shouldRefresh(path, method = 'GET', status, body, retried) {

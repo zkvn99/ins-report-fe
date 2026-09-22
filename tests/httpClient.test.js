@@ -85,4 +85,18 @@ describe('HTTP client', () => {
     await expect(request('/api/v1/auth/me')).rejects.toThrow()
     expect(fetchMock).toHaveBeenCalledTimes(2)
   })
+
+  it('notifies the app when the session was replaced elsewhere', async () => {
+    const dispatchEvent = vi.fn()
+    vi.stubGlobal('window', { dispatchEvent })
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse({
+      success: false,
+      errorCode: 'AUTH_401_SESSION_REPLACED',
+      errorMessage: '다른 곳에서 로그인되어 현재 로그인이 종료되었습니다.'
+    }, 401)))
+
+    await expect(request('/api/v1/auth/me')).rejects.toThrow('다른 곳에서 로그인되어 현재 로그인이 종료되었습니다.')
+    expect(dispatchEvent).toHaveBeenCalledOnce()
+    expect(dispatchEvent.mock.calls[0][0].type).toBe('medicover:session-replaced')
+  })
 })

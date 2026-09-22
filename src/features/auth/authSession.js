@@ -1,9 +1,12 @@
 import { computed, ref } from 'vue'
 import { getMe, login as loginRequest, logout as logoutRequest } from '../../api/authApi.js'
+import { SESSION_REPLACED_EVENT } from '../../api/httpClient.js'
 
 const user = ref(null)
 const isInitialized = ref(false)
 let initializationPromise = null
+
+if (typeof window !== 'undefined') window.addEventListener(SESSION_REPLACED_EVENT, clear)
 
 export const authUser = user
 export const isAuthenticated = computed(() => Boolean(user.value))

@@ -25,6 +25,14 @@ const router = createRouter({
   ]
 })
 
+if (typeof window !== 'undefined') {
+  window.addEventListener('medicover:session-replaced', () => {
+    if (router.currentRoute.value.path !== '/login') {
+      router.push({ path: '/login', query: { reason: 'session-replaced' } })
+    }
+  })
+}
+
 router.beforeEach(async (to) => {
   await initialize()
   if (to.meta.requiresAuth && !isAuthenticated.value) {
