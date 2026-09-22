@@ -16,6 +16,10 @@ export function login(payload) {
   })
 }
 
+export function getMe() {
+  return request('/api/v1/auth/me')
+}
+
 export function logout() {
   return request('/api/v1/auth/logout', { method: 'POST' })
 }

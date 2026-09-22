@@ -33,7 +33,7 @@ function removeFile(file, fileType) {
 async function submitAnalysis() {
   if (isSubmitting.value) return
   if (!allFiles.value.length) {
-    errors.submit = '분석할 PDF를 한 개 이상 선택하세요.'
+    errors.submit = '분석할 PDF 또는 기준 Excel을 한 개 이상 선택하세요.'
     return
   }
 
@@ -53,7 +53,16 @@ async function submitAnalysis() {
 
 <template>
   <section class="upload-panel">
-    <h1>자료 분석</h1>
+    <div class="step-indicator" aria-label="분석 단계">
+      <div class="step-item is-active"><b>STEP 1</b><span>AI 분석대상<br>파일 업로드</span></div>
+      <div class="step-item"><b>STEP 2</b><span>AI 크로스 분석</span></div>
+      <div class="step-item"><b>STEP 3</b><span>PDF 결과 산출</span></div>
+    </div>
+    <div class="page-intro">
+      <p class="home-kicker">MEDICOVER ANALYSIS</p>
+      <h1>AI 분석대상 파일 업로드</h1>
+      <p class="muted">건강과 보장 자료를 함께 올리면 나에게 필요한 보장을 교차 분석합니다.</p>
+    </div>
     <p class="muted">PDF와 선택한 Excel 기준표를 한 번의 분석 요청으로 함께 전송합니다.</p>
     <div class="upload-grid">
       <div>
@@ -106,8 +115,8 @@ async function submitAnalysis() {
       PDF를 분석하고 있습니다. 파일 크기에 따라 수 분이 걸릴 수 있습니다.
     </p>
     <div class="upload-actions">
-      <AppButton :disabled="isSubmitting" @click="submitAnalysis">
-        {{ isSubmitting ? '분석 중...' : `분석 시작 (${allFiles.length}개)` }}
+      <AppButton :disabled="isSubmitting || !allFiles.length" @click="submitAnalysis">
+        {{ isSubmitting ? '분석 중...' : `다음 / 분석 시작 (${allFiles.length}개)` }}
       </AppButton>
     </div>
   </section>

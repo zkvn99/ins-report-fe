@@ -12,7 +12,10 @@
   --red-pale: #fff1f1;
   --amber: #ae7728;
   --amber-pale: #fff7e9;
-  --blue: #4d6a84;
+  --blue: #2f6fed;
+  --blue-dark: #2358c7;
+  --green: #258b67;
+  --green-pale: #edf8f2;
   --unknown: #7a8993;
   --medical: #b9ced3;
   --covered: #287d78;
@@ -23,4 +26,6 @@
   --page-pad-top: 13mm;
   --page-pad-bottom: 15mm;
   --font: 'Noto Sans CJK KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --radius-card: 18px;
+  --content-width: 1120px;
 }

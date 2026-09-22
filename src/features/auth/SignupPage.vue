@@ -26,8 +26,11 @@ async function submit() {
 </script>
 
 <template>
-  <section class="auth-panel">
-    <h1>회원가입</h1>
+  <section class="auth-page">
+    <div class="auth-panel">
+      <p class="home-kicker">START YOUR MEDICOVER</p>
+      <h1>회원가입</h1>
+      <p class="auth-lead">분석을 시작하기 위한 기본 정보를 입력해주세요.</p>
     <form class="auth-form" @submit.prevent="submit">
       <label>아이디<input v-model.trim="form.loginId" required autocomplete="username"></label>
       <label>이메일<input v-model.trim="form.email" required type="email" autocomplete="email"></label>
@@ -37,9 +40,6 @@ async function submit() {
       <AppAlert v-if="errorMessage">{{ errorMessage }}</AppAlert>
       <AppButton type="submit" :disabled="isSubmitting">{{ isSubmitting ? '가입 중...' : '회원가입' }}</AppButton>
     </form>
+    </div>
   </section>
 </template>
-
-<style scoped>
-.auth-panel{max-width:520px;margin:48px auto;background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}.auth-form{display:grid;gap:18px;margin-top:24px}.auth-form label{display:grid;gap:8px;font-weight:700}.auth-form input{border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit}
-</style>

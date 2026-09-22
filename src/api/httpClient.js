@@ -21,7 +21,7 @@ async function execute(path, options, retried) {
     : await response.text()
 
   if (!response.ok) {
-    if (shouldRefresh(path, response.status, responseBody, retried)) {
+    if (shouldRefresh(path, requestOptions.method, response.status, responseBody, retried)) {
       await refreshAccessToken()
       return execute(path, options, true)
     }
@@ -44,11 +44,21 @@ async function execute(path, options, retried) {
   return responseBody
 }
 
-function shouldRefresh(path, status, body, retried) {
+function shouldRefresh(path, method = 'GET', status, body, retried) {
   return !retried
     && status === 401
     && body?.errorCode === EXPIRED_TOKEN_CODE
-    && !path.startsWith('/api/v1/auth/')
+    && !isAuthRefreshExcluded(path, method)
+}
+
+function isAuthRefreshExcluded(path, method) {
+  const excludedRequests = new Set([
+    'POST /api/v1/auth/login',
+    'POST /api/v1/auth/signup',
+    'POST /api/v1/auth/refresh',
+    'POST /api/v1/auth/logout'
+  ])
+  return excludedRequests.has(`${method.toUpperCase()} ${path}`)
 }
 
 function refreshAccessToken() {

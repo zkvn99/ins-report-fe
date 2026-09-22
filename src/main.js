@@ -7,5 +7,7 @@ import './styles/app.css'
 import './styles/components.css'
 import './styles/pages.css'
 import './styles/print.css'
+import { initialize } from './features/auth/authSession.js'
 
+await initialize()
 createApp(App).use(router).mount('#app')

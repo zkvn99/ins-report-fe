@@ -60,4 +60,29 @@ describe('HTTP client', () => {
 
     expect(fetchMock.mock.calls.filter(([url]) => url.endsWith('/api/v1/auth/refresh'))).toHaveLength(1)
   })
+
+  it('refreshes an expired me request and retries it once', async () => {
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(jsonResponse({ success: false, errorCode: 'AUTH_401_EXPIRED_TOKEN' }, 401))
+      .mockResolvedValueOnce(jsonResponse({ success: true, data: null }))
+      .mockResolvedValueOnce(jsonResponse({ success: true, data: { name: '홍길동', role: 'USER' } }))
+    vi.stubGlobal('fetch', fetchMock)
+
+    await expect(request('/api/v1/auth/me')).resolves.toEqual({ name: '홍길동', role: 'USER' })
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      'http://localhost:8080/api/v1/auth/me',
+      'http://localhost:8080/api/v1/auth/refresh',
+      'http://localhost:8080/api/v1/auth/me'
+    ])
+  })
+
+  it('does not retry me when refresh fails', async () => {
+    const fetchMock = vi.fn()
+      .mockResolvedValueOnce(jsonResponse({ success: false, errorCode: 'AUTH_401_EXPIRED_TOKEN' }, 401))
+      .mockResolvedValueOnce(jsonResponse({ success: false, errorCode: 'AUTH_401_EXPIRED_TOKEN' }, 401))
+    vi.stubGlobal('fetch', fetchMock)
+
+    await expect(request('/api/v1/auth/me')).rejects.toThrow()
+    expect(fetchMock).toHaveBeenCalledTimes(2)
+  })
 })

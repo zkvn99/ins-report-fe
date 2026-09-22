@@ -36,7 +36,12 @@ onBeforeUnmount(stopPolling)
 
 <template>
   <section class="analysis-panel">
-    <div class="analysis-title"><LoadingSpinner /><h1>분석 진행</h1></div>
+    <div class="step-indicator" aria-label="분석 단계">
+      <div class="step-item"><b>STEP 1</b><span>AI 분석대상<br>파일 업로드</span></div>
+      <div class="step-item is-active"><b>STEP 2</b><span>AI 크로스 분석</span></div>
+      <div class="step-item"><b>STEP 3</b><span>PDF 결과 산출</span></div>
+    </div>
+    <div class="analysis-title"><LoadingSpinner /><div><p class="home-kicker">MEDICOVER ANALYSIS</p><h1>AI 분석 중...</h1></div></div>
     <div class="progress-wrap"><div class="progress-bar"><span :style="{ width: `${Math.min(100, status.progress)}%` }" /></div><strong>{{ status.progress }}%</strong></div>
     <p>{{ status.message }}</p>
     <AppAlert v-if="error">{{ error }}</AppAlert>
