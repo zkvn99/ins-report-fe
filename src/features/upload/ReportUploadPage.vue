@@ -100,7 +100,6 @@ async function submitAnalysis() {
           label="선택 권장금액"
           hint="XLS · XLSX · 한 개 선택"
           accept=".xls,.xlsx"
-          :mime-types="['application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']"
           :files="supportingFiles"
           :disabled="isSubmitting"
           @add="addFiles($event, 'supporting')"

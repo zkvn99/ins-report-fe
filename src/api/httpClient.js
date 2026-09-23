@@ -11,6 +11,11 @@ export async function request(path, options = {}) {
 }
 
 export async function requestBinary(path, options = {}) {
+  const download = await executeBinary(path, options, false)
+  return download.blob
+}
+
+export async function requestDownload(path, options = {}) {
   return executeBinary(path, options, false)
 }
 
@@ -32,7 +37,24 @@ async function executeBinary(path, options, retried) {
     notifyError(message)
     throw new Error(message)
   }
-  return response.blob()
+  return {
+    blob: await response.blob(),
+    filename: parseDownloadFilename(response.headers.get('content-disposition'))
+  }
+}
+
+export function parseDownloadFilename(contentDisposition) {
+  if (!contentDisposition) return null
+  const encodedFilename = contentDisposition.match(/filename\*=UTF-8''([^;]+)/i)
+  if (encodedFilename) {
+    try {
+      return decodeURIComponent(encodedFilename[1])
+    } catch {
+      return encodedFilename[1]
+    }
+  }
+  const quotedFilename = contentDisposition.match(/filename="([^"]+)"/i)
+  return quotedFilename?.[1] || null
 }
 
 async function execute(path, options, retried) {

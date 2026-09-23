@@ -8,7 +8,31 @@
 .nav-text-button:disabled { opacity: .55; }
 .nav-signup { color: var(--blue) !important; }
 .user-greeting { margin-left: 8px; color: #20252b; font-size: 13px; font-weight: 800; }
-.app-shell { padding: 24px 0 42px; }
+.app-shell { padding: 0 0 42px; }
+
+.history-page { width: min(1180px, calc(100% - 32px)); margin: 42px auto; }
+.history-heading { margin-bottom: 24px; }
+.history-heading h1 { margin-top: 10px; color: #20252b; font-size: 32px; }
+.history-heading > p:last-child { margin-top: 8px; color: var(--muted); font-size: 14px; }
+.history-table-wrap { overflow-x: auto; margin-top: 16px; border: 1px solid #e3e8ec; border-radius: 14px; background: #fff; box-shadow: 0 12px 32px rgba(25,35,45,.04); }
+.history-table { width: 100%; min-width: 940px; border-collapse: collapse; font-size: 13px; }
+.history-table th { padding: 14px 16px; color: #536970; background: #f5f8f8; border-bottom: 1px solid #dfe7e8; text-align: left; white-space: nowrap; }
+.history-table td { padding: 15px 16px; color: #343b43; border-bottom: 1px solid #edf1f2; }
+.history-table tbody tr:last-child td { border-bottom: 0; }
+.history-table th:first-child, .history-table td:first-child { width: 60px; text-align: center; }
+.history-unique-number { max-width: 210px; overflow: hidden; color: #68717b !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; text-overflow: ellipsis; white-space: nowrap; }
+.history-empty { height: 180px; color: var(--muted) !important; text-align: center !important; }
+.history-status { display: inline-flex; padding: 5px 9px; border-radius: 99px; color: #66747a; background: #eef2f3; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.history-status.is-completed { color: #216b67; background: #e9f5f2; }
+.history-status.is-processing, .history-status.is-received { color: #446b9e; background: #edf3fb; }
+.history-status.is-failed { color: #a9444d; background: #fff0f1; }
+.history-download-button { min-width: 90px; padding: 8px 11px; border: 1px solid #c8d9d9; border-radius: 8px; color: #216b67; background: #fff; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.history-download-button:hover:not(:disabled) { border-color: #287d78; background: #f2f9f7; }
+.history-download-button:disabled { cursor: not-allowed; opacity: .42; }
+.app-pagination { display: flex; justify-content: center; gap: 6px; margin-top: 24px; }
+.app-pagination button { min-width: 36px; height: 36px; padding: 0 10px; border: 1px solid #dce4e5; border-radius: 8px; color: #607078; background: #fff; font-size: 13px; font-weight: 800; }
+.app-pagination button.is-current { border-color: #287d78; color: #fff; background: #287d78; }
+.app-pagination button:disabled { cursor: not-allowed; opacity: .4; }
 
 .app-button { height: 42px; padding: 0 16px; border: 1px solid transparent; border-radius: 9px; font-size: 14px; font-weight: 600; transition: background-color 150ms, border-color 150ms, color 150ms; }
 .app-button--sm { height: 34px; padding: 0 12px; font-size: 13px; }

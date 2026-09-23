@@ -16,11 +16,11 @@ async function createPdfDownload() {
   isDownloading.value = true
   error.value = ''
   try {
-    const blob = await downloadReportPdf(props.reportId)
-    const url = URL.createObjectURL(blob)
+    const download = await downloadReportPdf(props.reportId)
+    const url = URL.createObjectURL(download.blob)
     const anchor = document.createElement('a')
     anchor.href = url
-    anchor.download = `medicover-report-${props.reportId}.pdf`
+    anchor.download = download.filename || `건강자산_보장분석_${props.reportId}.pdf`
     anchor.click()
     URL.revokeObjectURL(url)
   } catch (cause) {

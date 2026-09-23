@@ -11,7 +11,8 @@ export default defineConfig({
   },
   server: {
     allowedHosts: [
-        '.trycloudflare.com'
+        '.trycloudflare.com',
+        'localhost'
     ]
   }
 })

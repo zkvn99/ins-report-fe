@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { request } from '../src/api/httpClient.js'
+import { parseDownloadFilename, request } from '../src/api/httpClient.js'
 
 afterEach(() => {
   vi.unstubAllGlobals()
@@ -13,6 +13,12 @@ function jsonResponse(body, status = 200) {
 }
 
 describe('HTTP client', () => {
+  it('decodes an RFC 5987 download filename', () => {
+    expect(parseDownloadFilename(
+      "attachment; filename*=UTF-8''%EA%B1%B4%EA%B0%95%EC%9E%90%EC%82%B0.pdf"
+    )).toBe('건강자산.pdf')
+  })
+
   it('unwraps a successful API response', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue(jsonResponse({
       success: true,

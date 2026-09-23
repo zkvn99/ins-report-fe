@@ -1,4 +1,4 @@
-import { request, requestBinary } from './httpClient.js'
+import { request, requestDownload } from './httpClient.js'
 
 export function createReportAnalysis(formData) {
   return request('/api/v1/analysis', { method: 'POST', body: formData })
@@ -13,5 +13,10 @@ export function getReport(reportId) {
 }
 
 export function downloadReportPdf(reportId) {
-  return requestBinary(`/api/v1/reports/${encodeURIComponent(reportId)}/pdf`)
+  return requestDownload(`/api/v1/reports/${encodeURIComponent(reportId)}/pdf`)
+}
+
+export function getReportResults(page = 0, size = 20) {
+  const query = new URLSearchParams({ page: String(page), size: String(size) })
+  return request(`/api/v1/report-results?${query}`)
 }
