@@ -76,9 +76,9 @@ describe('HTTP client', () => {
 
     await expect(request('/api/v1/auth/me')).resolves.toEqual({ name: '홍길동', role: 'USER' })
     expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
-      'http://localhost:8080/api/v1/auth/me',
-      'http://localhost:8080/api/v1/auth/refresh',
-      'http://localhost:8080/api/v1/auth/me'
+      '/api/v1/auth/me',
+      '/api/v1/auth/refresh',
+      '/api/v1/auth/me'
     ])
   })
 

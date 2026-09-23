@@ -9,11 +9,21 @@ npm install
 npm run dev
 ```
 
-`.env.example`을 복사해 API 주소를 설정합니다.
+로컬에서는 브라우저가 동일 Origin의 `/api`를 호출하고 Vite가 Spring으로 프록시합니다. 별도의 API Origin을 지정하지 않습니다.
 
 ```dotenv
-VITE_API_BASE_URL=http://localhost:8080
+VITE_API_BASE_URL=
+VITE_SPRING_PROXY_TARGET=http://localhost:8080
 ```
+
+환경별 파일은 다음처럼 분리되어 있습니다.
+
+| 파일 | 용도 | API 연결 |
+| --- | --- | --- |
+| `.env.development` | 로컬 개발 | Vite `/api` 프록시 |
+| `.env.production` | 운영 빌드 | nginx/게이트웨이의 동일 Origin `/api` |
+
+운영 웹 서버는 `/api/*` 요청을 Backend로 전달해야 합니다. 프론트와 API를 다른 Site로 배포해야 하는 경우에만 `VITE_API_BASE_URL`을 HTTPS API 주소로 설정하고 Backend도 `JWT_COOKIE_SECURE=true`, `JWT_COOKIE_SAME_SITE=None`, `CORS_ALLOWED_ORIGINS`를 함께 설정합니다.
 
 ## 화면
 
@@ -27,4 +37,6 @@ VITE_API_BASE_URL=http://localhost:8080
 ```bash
 npm test
 npm run build
+npm run build:dev
+npm run build:prod
 ```

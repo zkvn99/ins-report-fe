@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ''
 import { notifyError } from '../shared/notificationStore.js'
 const EXPIRED_TOKEN_CODE = 'AUTH_401_EXPIRED_TOKEN'
 const SESSION_REPLACED_CODE = 'AUTH_401_SESSION_REPLACED'
