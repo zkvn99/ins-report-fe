@@ -20,3 +20,8 @@ export function getReportResults(page = 0, size = 20) {
   const query = new URLSearchParams({ page: String(page), size: String(size) })
   return request(`/api/v1/report-results?${query}`)
 }
+
+export function getAdminReportResults(page = 0, size = 20) {
+  const query = new URLSearchParams({ page: String(page), size: String(size) })
+  return request(`/api/v1/admin/report-results?${query}`)
+}

@@ -90,7 +90,7 @@ RECEIVED
 버전을 포함한다.
 
 PDF 버튼은 `GET /api/v1/reports/{reportId}/pdf`의 binary 응답을 다운로드한다.
-파일명은 `medicover-report-{reportId}.pdf`이며 브라우저 인쇄본은 최종 PDF가 아니다.
+파일명은 `mida-report-{reportId}.pdf`이며 브라우저 인쇄본은 최종 PDF가 아니다.
 
 ## 3. 계약 변경 규칙
 

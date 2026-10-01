@@ -41,7 +41,7 @@ onBeforeUnmount(stopPolling)
       <div class="step-item is-active"><b>STEP 2</b><span>AI 크로스 분석</span></div>
       <div class="step-item"><b>STEP 3</b><span>PDF 결과 산출</span></div>
     </div>
-    <div class="analysis-title"><LoadingSpinner /><div><p class="home-kicker">MEDICOVER ANALYSIS</p><h1>AI 분석 중...</h1></div></div>
+    <div class="analysis-title"><LoadingSpinner /><div><p class="home-kicker">MIDA ANALYSIS</p><h1>AI 분석 중...</h1></div></div>
     <div class="progress-wrap"><div class="progress-bar"><span :style="{ width: `${Math.min(100, status.progress)}%` }" /></div><strong>{{ status.progress }}%</strong></div>
     <p>{{ status.message }}</p>
     <AppAlert v-if="error">{{ error }}</AppAlert>

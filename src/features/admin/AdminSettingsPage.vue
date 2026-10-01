@@ -1,9 +1,9 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-import { downloadReportPdf, getReportResults } from '../../api/reportApi.js'
+import { downloadReportPdf, getAdminReportResults } from '../../api/reportApi.js'
 import AppAlert from '../../shared/components/AppAlert.vue'
-import ResultHistoryTable from './components/ResultHistoryTable.vue'
-import { canDownloadPdf } from './historyUtils.js'
+import ResultHistoryTable from '../history/components/ResultHistoryTable.vue'
+import { canDownloadPdf } from '../history/historyUtils.js'
 
 const PAGE_SIZE = 20
 const results = ref([])
@@ -19,13 +19,13 @@ async function loadHistory(targetPage = 0) {
   isLoading.value = true
   error.value = ''
   try {
-    const response = await getReportResults(targetPage, PAGE_SIZE)
+    const response = await getAdminReportResults(targetPage, PAGE_SIZE)
     results.value = response.content || []
     page.value = response.page
     totalElements.value = response.totalElements
     totalPages.value = response.totalPages
   } catch (cause) {
-    error.value = cause.message || '결과이력을 불러오지 못했습니다.'
+    error.value = cause.message || '전체 결과이력을 불러오지 못했습니다.'
   } finally {
     isLoading.value = false
   }
@@ -58,9 +58,9 @@ onMounted(() => loadHistory())
 <template>
   <section class="history-page">
     <div class="history-heading">
-      <p class="home-kicker">MIDA HISTORY</p>
-      <h1>결과이력</h1>
-      <p>최근 산출한 건강자산 및 보장분석 결과를 확인할 수 있습니다.</p>
+      <p class="home-kicker">ADMIN SETTINGS</p>
+      <h1>설정</h1>
+      <p>전체 결과이력</p>
     </div>
 
     <AppAlert v-if="error">{{ error }}</AppAlert>
@@ -73,6 +73,7 @@ onMounted(() => loadHistory())
       :total-pages="totalPages"
       :is-loading="isLoading"
       :downloading-report-ids="downloadingReportIds"
+      show-admin-details
       @download="downloadPdf"
       @page-change="loadHistory"
     />

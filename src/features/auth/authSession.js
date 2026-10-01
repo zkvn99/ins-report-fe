@@ -4,7 +4,7 @@ import { SESSION_REPLACED_EVENT } from '../../api/httpClient.js'
 
 const user = ref(null)
 const isInitialized = ref(false)
-const AUTH_SESSION_MARKER = 'medicover:authenticated'
+const AUTH_SESSION_MARKER = 'mida:authenticated'
 let initializationPromise = null
 
 if (typeof window !== 'undefined') window.addEventListener(SESSION_REPLACED_EVENT, clear)

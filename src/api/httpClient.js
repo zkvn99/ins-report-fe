@@ -2,7 +2,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ''
 import { notifyError } from '../shared/notificationStore.js'
 const EXPIRED_TOKEN_CODE = 'AUTH_401_EXPIRED_TOKEN'
 const SESSION_REPLACED_CODE = 'AUTH_401_SESSION_REPLACED'
-export const SESSION_REPLACED_EVENT = 'medicover:session-replaced'
+export const SESSION_REPLACED_EVENT = 'mida:session-replaced'
 const REFRESH_PATH = '/api/v1/auth/refresh'
 let refreshPromise = null
 
@@ -120,9 +120,12 @@ function shouldRefresh(path, method = 'GET', status, body, retried) {
 function isAuthRefreshExcluded(path, method) {
   const excludedRequests = new Set([
     'POST /api/v1/auth/login',
-    'POST /api/v1/auth/signup',
+    // 'POST /api/v1/auth/signup',
     'POST /api/v1/auth/refresh',
-    'POST /api/v1/auth/logout'
+    'POST /api/v1/auth/logout',
+    'POST /api/v1/auth/password-reset',
+    'POST /api/v1/auth/password-reset/email',
+    'POST /api/v1/auth/password-reset/email/verify'
   ])
   return excludedRequests.has(`${method.toUpperCase()} ${path}`)
 }

@@ -59,7 +59,7 @@ async function submitAnalysis() {
       <div class="step-item"><b>STEP 3</b><span>PDF 결과 산출</span></div>
     </div>
     <div class="page-intro">
-      <p class="home-kicker">MEDICOVER ANALYSIS</p>
+      <p class="home-kicker">MIDA ANALYSIS</p>
       <h1>AI 분석대상 파일 업로드</h1>
       <p class="muted">건강과 보장 자료를 함께 올리면 나에게 필요한 보장을 교차 분석합니다.</p>
     </div>

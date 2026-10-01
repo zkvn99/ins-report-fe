@@ -1,4 +1,4 @@
-<script setup>
+<!-- <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { signup } from '../../api/authApi.js'
@@ -28,7 +28,7 @@ async function submit() {
 <template>
   <section class="auth-page">
     <div class="auth-panel">
-      <p class="home-kicker">START YOUR MEDICOVER</p>
+      <p class="home-kicker">START YOUR MIDA</p>
       <h1>회원가입</h1>
       <p class="auth-lead">분석을 시작하기 위한 기본 정보를 입력해주세요.</p>
     <form class="auth-form" @submit.prevent="submit">
@@ -42,4 +42,4 @@ async function submit() {
     </form>
     </div>
   </section>
-</template>
+</template> -->

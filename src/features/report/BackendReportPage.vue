@@ -47,7 +47,7 @@ onMounted(async () => {
   <div v-else-if="!reportData" class="empty-box screen-only">보고서를 불러오는 중입니다.</div>
   <section v-else class="backend-report-panel">
     <div class="report-result-actions screen-only">
-      <div><p class="home-kicker">MEDICOVER REPORT</p><h1>건강자산 &amp; 보장분석</h1><p class="muted">Backend에서 계산·저장된 최종 리포트입니다.</p></div>
+      <div><p class="home-kicker">MIDA REPORT</p><h1>건강자산 &amp; 보장분석</h1><p class="muted">Backend에서 계산·저장된 최종 리포트입니다.</p></div>
       <AppButton :disabled="isDownloading" @click="createPdfDownload">{{ isDownloading ? 'PDF 생성 중...' : 'PDF 다운로드' }}</AppButton>
     </div>
     <ReportView :report="reportData" />

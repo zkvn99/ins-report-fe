@@ -103,6 +103,6 @@ describe('HTTP client', () => {
 
     await expect(request('/api/v1/auth/me')).rejects.toThrow('다른 곳에서 로그인되어 현재 로그인이 종료되었습니다.')
     expect(dispatchEvent).toHaveBeenCalledOnce()
-    expect(dispatchEvent.mock.calls[0][0].type).toBe('medicover:session-replaced')
+    expect(dispatchEvent.mock.calls[0][0].type).toBe('mida:session-replaced')
   })
 })
