@@ -22,7 +22,7 @@ function startAnalysis() {
       <p class="home-kicker">MEDICAL × INSURANCE Data Analytics </p>
       <h1>보험이 부족합니다가 아니라<br><em>어디가, 왜 부족한지</em> 보여주세요.</h1>
       <p class="home-lead">건강검진과 보험 보장을 함께 분석해<br>지금 필요한 판단의 근거를 만듭니다.</p>
-      <div class="home-brand">MIDA <span>매디커버</span></div>
+      <div class="home-brand">MIDA <span>미다</span></div>
     </div>
     <div class="home-guide">
       <div class="section-heading">
@@ -36,7 +36,7 @@ function startAnalysis() {
           <p>{{ card.text }}</p>
         </article>
       </div>
-      <AppButton class="home-cta" size="lg" @click="startAnalysis">매디커버 실행 <span>→</span></AppButton>
+      <AppButton class="home-cta" size="lg" @click="startAnalysis">미다 실행 <span>→</span></AppButton>
     </div>
   </section>
 </template>
